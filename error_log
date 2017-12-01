@@ -1,0 +1,7 @@
+[26-Sep-2017 22:16:47 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gissac_customers.gis_inf' doesn't exist' in /home/gissac/public_html/global/modelo/Modulo.php:95
+Stack trace:
+#0 /home/gissac/public_html/global/modelo/Modulo.php(95): PDOStatement->execute()
+#1 /home/gissac/public_html/global/index.php(9): Modulo->getBussines(602)
+#2 {main}
+  thrown in /home/gissac/public_html/global/modelo/Modulo.php on line 95
+[26-Sep-2017 22:22:08 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/gissac/public_html/global/index.php on line 13

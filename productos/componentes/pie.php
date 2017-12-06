@@ -1,12 +1,12 @@
-  <footer style="background-color: #e6e6e6" class="page-footer green-text">
+  <footer style="background-color: #e6e6e6" class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l3 s12 ">
           <h5 class="black-text">Enlaces</h5>
           <ul>
-            <li><a class="green-text" href="#!">Solarwinds</a></li>
-            <li><a class="green-text" href="#!">Varonis</a></li>
-            <li><a class="green-text" href="#!">Iboss</a></li>
+            <li><a class="blue-text" href="#!">Solarwinds</a></li>
+            <li><a class="blue-text" href="#!">Varonis</a></li>
+            <li><a class="blue-text" href="#!">Iboss</a></li>
           </ul>
         </div>
         <div class="col l3 s12">

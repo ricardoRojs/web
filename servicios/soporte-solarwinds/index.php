@@ -67,11 +67,6 @@ if($dataBussines){
             );
 
         });
-        (function ($) {
-            $(function () {
-                $('.slider').slider();
-            });
-        })(jQuery);
     </script>
     <style>
         .dropdown-content{

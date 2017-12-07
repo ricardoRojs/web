@@ -11,6 +11,7 @@ $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
 $nameFull;
+$marcaFull = "Servicios";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];

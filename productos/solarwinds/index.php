@@ -138,19 +138,22 @@
   <?php include ("../componentes/menu.php");?>
   <!--Toda la modificacion -->
 
-      <div id="index-banner" class="parallax-container">
-          <div class="section no-pad-bot">
+
               <div class="container center">
                   <h2 class="header center orange-text text-orange"><?php echo $moduloFull;?></h2>
                   <div class="row">
-                      <div class="col m6 left-align">
-                          <div class="center-align">
-                              <h5 class="header col s12 light white-text"><?php echo $subTitulo;?></h5>
+                      <div class="col m6">
+                          <div class="left-align" style="padding: 25px 10px 50px 10px;">
+                              <h5 class="header col s12 light"><?php echo $subTitulo;?></h5>
                           </div>
-                          <div class="center-align">
+                          <div class="left-align" style="padding: 70px 10px 50px 10px;">
+                              <br>
                               <p>
                                   <b>Precio Referencial : S/. 17,900</b>
+                                  <i class="material-icons small">trending_flat</i> <a class="btn z-depth-3 waves-effect waves-light orange lighten-1">Cotizar<i class="material-icons small grey-text left">assignment</i></a>
                               </p>
+                              <br>
+
                           </div>
                           <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="left" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
                           <a href="<?php echo $downSolar;?>" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="right" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
@@ -162,16 +165,14 @@
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="parallax" style="background-color: #616161"><img src="#" alt="Unsplashed background img 1"></div>
-      </div>
+
 
       <div class="container">
           <div class="section">
               <div class="row">
                   <div class="col s12">
-                      <ul class="tabs">
-                          <li class="tab"><a class="active orange-text" href="#test1">Sobre <?php echo $moduloShort;?></a></li>
+                      <ul class="tabs grey darken-2">
+                          <li class="tab"><a href="#test1" class="active orange-text">Sobre <?php echo $moduloShort;?></a></li>
                           <li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>
                           <li class="tab"><a href="#test3" class="orange-text">Requisitos</a></li>
                           <li class="tab"><a href="#test4" class="orange-text">Videos</a></li>

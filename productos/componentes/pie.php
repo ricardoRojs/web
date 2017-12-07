@@ -1,4 +1,4 @@
-  <footer style="background-color: #e6e6e6" class="page-footer">
+  <footer class="page-footer grey lighten-3">
     <div class="container">
       <div class="row">
         <div class="col l3 s12 ">
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright green-text">
+    <div class="footer-copyright blue-text">
       <div class="container">
       <p>Copyright © Global Investment Solutions S.A.C 2017</p>
       </div>

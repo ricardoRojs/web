@@ -11,6 +11,7 @@
     
     $nameShort;
     $nameFull;
+    $moduloFull = "Global Investment Solution S.A.C";
 
 
     if($dataBussines){

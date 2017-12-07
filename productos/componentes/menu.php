@@ -13,7 +13,12 @@
         -webkit-transform: none;
         transform: none;
         background-repeat: repeat;
-        background-image: url("../../img/new.png") !important;
+        <?php if($id == 602){
+            echo "background-image: url('img/new.png') !important;";
+        }else{
+            echo "background-image: url('../../img/new.png') !important;";
+        }?>
+        /*background-image: url("../../img/new.png") !important;*/
     }
     #conte{
         position: absolute;
@@ -66,8 +71,8 @@
         <ul id='solarwinds' class='dropdown-content'>
             <li><a class='dropdown-button2 d' href='#' data-activates='redes' data-hover="hover" data-alignment="left">Administración de Redes<i class="material-icons right">keyboard_arrow_right</i></a></li>
             <li><a class='dropdown-button2 d' href='#' data-activates='sistemas' data-hover="hover" data-alignment="left">Administración de Sistemas<i class="material-icons right">keyboard_arrow_right</i></a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='seguridad' data-hover="hover" data-alignment="left">Seguridad de Ti<i class="material-icons right">keyboard_arrow_right</i></a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='servicio' data-hover="hover" data-alignment="left">Servicio de Ayuda de Ti<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='seguridad' data-hover="hover" data-alignment="left">Seguridad de TI<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='servicio' data-hover="hover" data-alignment="left">Servicio de Ayuda de TI<i class="material-icons right">keyboard_arrow_right</i></a></li>
             <li><a class='dropdown-button2 d' href='#' data-activates='base' data-hover="hover" data-alignment="left">Administración de Bases de Datos<i class="material-icons right">keyboard_arrow_right</i></a></li>
         </ul>
 
@@ -79,9 +84,9 @@
             <li><a href="<?php echo $urlSolar."?id=4";?>">Ip Address Manager</a></li>
             <li><a href="<?php echo $urlSolar."?id=5";?>">User Device Tracker</a></li>
             <li><a href="<?php echo $urlSolar."?id=6";?>">Voip &amp; Network Quality Manager</a></li>
-            <li><a href="<?php echo $urlSolar."?id=7";?>">Engineer's Toolset</a></li>
-            <li><a href="<?php echo $urlSolar."?id=8";?>">Network Topology Mapper</a></li>
-            <li><a href="<?php echo $urlSolar."?id=9";?>">Log &amp; Event Manager</a></li>
+            <li><a href="<?php echo $urlSolar."?id=7";?>">Log &amp; Event Manager</a></li>
+            <li><a href="<?php echo $urlSolar."?id=8";?>">Engineer's Toolset</a></li>
+            <li><a href="<?php echo $urlSolar."?id=9";?>">Network Topology Mapper</a></li>
             <li><a href="<?php echo $urlSolar."?id=10";?>">Kiwi CatTools</a></li>
             <li><a href="<?php echo $urlSolar."?id=11";?>">Kiwi Syslog Server</a></li>
         </ul>
@@ -117,11 +122,11 @@
 
         <!--Primer nivel iboss -->
         <ul id='iboss' class='dropdown-content'>
-            <li><a class='dropdown-button2 d' href='#' data-activates='web' data-hover="hover" data-alignment="left">Administración de Contenido Web</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='reportes' data-hover="hover" data-alignment="left">Reportes Y Logs</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='gestion' data-hover="hover" data-alignment="left">Gestión De Ancho De Banda</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='monitoreo' data-hover="hover" data-alignment="left">Monitoreo De Escritorio</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='integracion' data-hover="hover" data-alignment="left">Integración</a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='web' data-hover="hover" data-alignment="left">Administración de Contenido Web<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='reportes' data-hover="hover" data-alignment="left">Reportes Y Logs<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='gestion' data-hover="hover" data-alignment="left">Gestión De Ancho De Banda<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='monitoreo' data-hover="hover" data-alignment="left">Monitoreo De Escritorio<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='integracion' data-hover="hover" data-alignment="left">Integración<i class="material-icons right">keyboard_arrow_right</i></a></li>
         </ul>
 
         <!--Segundo nivel iboss (Administración de Contenido Web)-->
@@ -171,11 +176,11 @@
 
         <!--1 nivel varonis -->
         <ul id='varonis' class='dropdown-content'>
-            <li><a class='dropdown-button2 d' href='#' data-activates='Auditoría' data-hover="hover" data-alignment="left">Auditoría de datos y Protección</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='Gobierno' data-hover="hover" data-alignment="left">Gobierno del acceso de datos</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='Sincronización' data-hover="hover" data-alignment="left">Sincronización de archivos empresariales y archivos compartidos</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='Descubrimiento' data-hover="hover" data-alignment="left">Descubrimiento y búsqueda empresarial</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='Retención' data-hover="hover" data-alignment="left">Retención y migración de datos</a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='Auditoría' data-hover="hover" data-alignment="left">Auditoría de datos y Protección<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='Gobierno' data-hover="hover" data-alignment="left">Gobierno del acceso de datos<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='Sincronización' data-hover="hover" data-alignment="left">Sincronización de archivos empresariales y compartidos<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='Descubrimiento' data-hover="hover" data-alignment="left">Descubrimiento y búsqueda empresarial<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='#' data-activates='Retención' data-hover="hover" data-alignment="left">Retención y migración de datos<i class="material-icons right">keyboard_arrow_right</i></a></li>
         </ul>
         <!--fin 1 nivel varonis -->
 
@@ -363,6 +368,6 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
     <div class="center" id="titulo">
-        <h2><?php echo $moduloFull;?></h2>
+        <h2><?php echo $marcaFull;?></h2>
     </div>
 </nav>

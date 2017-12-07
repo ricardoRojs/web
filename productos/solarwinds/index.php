@@ -128,6 +128,10 @@
         #download-btn{
             margin: 5px
         }
+       .dropdown-content li>a>i{
+           margin: 0 0 0 0;
+           vertical-align: middle;
+       }
     </style>
       
   <!--Toda la modificacion -->
@@ -136,22 +140,30 @@
 
       <div id="index-banner" class="parallax-container">
           <div class="section no-pad-bot">
-              <div class="container">
-                  <br>
+              <div class="container center">
                   <h2 class="header center orange-text text-orange"><?php echo $moduloFull;?></h2>
-
-                  <div class="row center">
-                      <h5 class="header col s12 light white-text"><?php echo $subTitulo;?></h5>
+                  <div class="row">
+                      <div class="col m6 left-align">
+                          <div class="center-align">
+                              <h5 class="header col s12 light white-text"><?php echo $subTitulo;?></h5>
+                          </div>
+                          <div class="center-align">
+                              <p>
+                                  <b>Precio Referencial : S/. 17,900</b>
+                              </p>
+                          </div>
+                          <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="left" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
+                          <a href="<?php echo $downSolar;?>" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="right" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
+                      </div>
+                      <div class="col m6 right-align">
+                          <br>
+                          <br>
+                          <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="500px" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+                      </div>
                   </div>
-                  <div class="row center">
-                      <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="left" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
-                      <a href="<?php echo $downSolar;?>" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="right" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
-                  </div>
-                  <br>
-
               </div>
           </div>
-          <div class="parallax"><img src="../../img/fondo1.png" alt="Unsplashed background img 1"></div>
+          <div class="parallax" style="background-color: #616161"><img src="#" alt="Unsplashed background img 1"></div>
       </div>
 
       <div class="container">
@@ -168,9 +180,10 @@
                   <div id="test1" class="col s12">
                       <!--Toda la modificacion de contenido-->
                       <div class="row">
-                          <div class="col s12 center">
+                          <div class="col s12 m12 center">
                               <h2 class="header center orange-text text-orange"><?php echo $moduloShort;?></h2>
                               <h5 class="header center orange-text text-orange"><?php echo "(".$moduloCat.")";?></h5>
+                              <img class="right" src="img/solarpartner.png" alt="Marca">
                           </div>
                       </div>
                       <?php
@@ -268,7 +281,7 @@
                       <div class="card sticky-action col s12 m6 z-depth-3">
                           <div class="card-content">
                               <span class="card-title activator grey-text text-darken-4">Video 1</span>
-                              <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="100%" height="230px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+                              <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="100%" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
                           </div>
                       </div>
                       <!--Toda la modificacion de contenido-->
@@ -305,14 +318,13 @@
 
           <div class="parallax"><img src="../../img/dos.jpg" alt="Unsplashed background img 2"></div>
       </div>
-
       <div class="container">
           <div class="section">
 
               <div class="row">
                   <div class="col s12 center">
                       <h4><i class="mdi-content-send brown-text"></i>Necesita más información</h4>
-                      <p class="left-align light">Para conocer mas sobre la herramienta, puedes contactarnos o escribinos, con gusto te brindaremos toda la informacion que necesitas.</p>
+                      <p class="left-align">Para conocer mas sobre la herramienta, puedes contactarnos o escribinos, con gusto te brindaremos toda la informacion que necesitas.</p>
                       <a href="http://www.gis-sac.com/contactar/formulario.html" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">Contactar</a>
                   </div>
               </div>

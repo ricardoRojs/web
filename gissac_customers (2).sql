@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 06-12-2017 a las 23:00:55
+-- Tiempo de generación: 11-12-2017 a las 22:59:48
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -90,6 +90,48 @@ CREATE TABLE `gis_inf` (
 
 INSERT INTO `gis_inf` (`id`, `nameShort`, `nameFull`, `contact`) VALUES
 (602, 'GIS S.A.C', 'Global Investment Solutions S.A.C', 'http://www.gis-sac.com/contactos/formulario.html');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `gis_modulos`
+--
+
+CREATE TABLE `gis_modulos` (
+  `id` int(11) NOT NULL,
+  `marca` varchar(50) NOT NULL,
+  `moduloFull` varchar(50) NOT NULL,
+  `moduloShort` varchar(15) NOT NULL,
+  `moduloDesc` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `gis_modulos`
+--
+
+INSERT INTO `gis_modulos` (`id`, `marca`, `moduloFull`, `moduloShort`, `moduloDesc`) VALUES
+(1, 'Solarwinds', 'Network Performance Monitor', 'NPM', 'Reduzca los cortes de red y mejore el rendimiento con software de monitoreo de red avanzado'),
+(2, 'Solarwinds', 'NetFlow Traffic Analyzer', 'NTA', 'Software de monitoreo del ancho de banda y analizador del tráfico de red'),
+(3, 'Solarwinds', 'Network Configuration Manager', 'NCM', 'Administración de cumplimiento y configuración automática de redes'),
+(4, 'Solarwinds', 'IP Address Manager', 'IPAM', 'Ahorre tiempo y prevenga los errores costosos con software de gestión de direcciones IP económico y fácil de usar'),
+(5, 'Solarwinds', 'User Device Tracker', 'UDT', 'Localice usuarios y dispositivos en su red'),
+(6, 'Solarwinds', 'VoIP & Network Quality Manager', 'VNQM', 'Adquiera una profunda comprensión de las métricas de QoS de llamadas críticas y el rendimiento de WAN'),
+(7, 'Solarwinds', 'Log & Event Manager', 'LEM', 'Software de administración del registro para obtener seguridad, cumplimiento, y detección y solución de problemas'),
+(8, 'Solarwinds', 'Engineer\'s Toolset', 'ETS', 'Más de 60 herramientas imprescindibles de detección y solución de problemas y de diagnóstico de red'),
+(9, 'Solarwinds', 'Network Topology Mapper', 'NTM', 'Planifique su red automáticamente en cuestión de minutos con software de asignación de red'),
+(10, 'Solarwinds', 'Kiwi CatTools', 'Kiwi CT', 'Software potente de administración de automatización y configuración de red'),
+(11, 'Solarwinds', 'Kiwi Syslog Server', 'Kiwi Syslog', 'Centralice y simplifique la administración de mensajes de registro en los dispositivos y servidores de la red'),
+(12, 'Solarwinds', 'Server & Application Monitor', 'SAM', 'Descubra y resuelva los problemas de las aplicaciones antes de que se conviertan en incidentes'),
+(13, 'Solarwinds', 'Virtualization Manager', 'VM', 'Optimice el desempeño y repare problemas de vSphere y Hyper-V en minutos'),
+(14, 'Solarwinds', 'Storage Resource Monitor', 'SRM', 'Monitoreo de la capacidad y el rendimiento del almacenamiento de varios proveedores'),
+(15, 'Solarwinds', 'Web Performance Monitor', 'WPM', 'Monitoreo exhaustivo del desempeño de aplicaciones web y SaaS'),
+(16, 'Solarwinds', 'Patch Manager', 'PM', 'Software intuitivo de administración de parches para tratar rápidamente las vulnerabilidades del software'),
+(17, 'Solarwinds', 'Serv-U Managed File Transfer Server', 'SU-MFT', 'Mejore la seguridad y el control de las transferencias de archivos dentro y fuera de su organización'),
+(18, 'Solarwinds', 'Web Help Desk', 'WHD', 'Software asequible de administración de activos y control de tickets del servicio de asistencia'),
+(19, 'Solarwinds', 'DameWare Remote Support', 'DameWare', 'Herramientas de control remoto y de administración de sistemas en un paquete fácil de usar'),
+(20, 'Solarwinds', 'Dameware Mini Remote Control', 'DameWare Mini', 'Software de control remoto asequible para todas las necesidades de soporte al cliente y del servicio de ayuda'),
+(21, 'Solarwinds', 'Mobile Admin', 'MA', 'Simplifique la administración y administración de TI desde su dispositivo móvil'),
+(22, 'Solarwinds', 'Database Performance Analyzer', 'DPA', 'Monitoreo, análisis y ajuste del desempeño de las bases de datos y de las consultas SQL');
 
 -- --------------------------------------------------------
 
@@ -196,6 +238,12 @@ ALTER TABLE `gis_iboss`
 -- Indices de la tabla `gis_inf`
 --
 ALTER TABLE `gis_inf`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `gis_modulos`
+--
+ALTER TABLE `gis_modulos`
   ADD PRIMARY KEY (`id`);
 
 --

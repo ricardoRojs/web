@@ -104,5 +104,22 @@ class Modulo{
 		mysqli_close($conexion);
 
 	}
+
+	public function getModulo($marca){
+        $modulo = null;
+        $modelo = new Conexion();
+        $conexion = $modelo->getConexion();
+
+        $sql = "SELECT * FROM gis_modulos WHERE marca=:marca";
+        $statement = $conexion->prepare($sql);
+        $statement->bindParam(':marca', $marca);
+        $statement->execute();
+
+        while ($filas = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $modulo[] = $filas;
+        }
+        return $modulo;
+        mysqli_close($conexion);
+    }
 }
 ?>

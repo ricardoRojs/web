@@ -50,16 +50,6 @@ class urlIndex{
                 return "usted ingreso: ".$link;
                 break;
         }
-
-        /**$urlSolar = $url."/productos/solarwinds/index.php";
-        $urlIboss = $url."/productos/iboss/index.php";
-        $urlVaron = $url."/productos/varonis/index.php";
-
-        $urlServi = $url."/servicios/";
-        $urlClien = $url."/clientes/";*/
-
-
-
     }
 }
 

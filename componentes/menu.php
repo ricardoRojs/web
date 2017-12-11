@@ -39,7 +39,7 @@
         <a href="/" itemprop="url" class="brand-logo site-logo">GIS SAC</a>
 
         <ul id='productos' class='dropdown-content'>
-            <li><a class='dropdown-button2 d' href='#' data-activates='solarwinds' data-hover="hover" data-alignment="left">Solarwinds<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <li><a class='dropdown-button2 d' href='<?php echo  $link->url("inicio")."productos/index.php?marca=solarwinds"?>' data-activates='solarwinds' data-hover="hover" data-alignment="left">Solarwinds<i class="material-icons right">keyboard_arrow_right</i></a></li>
             <li><a class='dropdown-button2 d' href='#' data-activates='iboss' data-hover="hover" data-alignment="left">Iboss<i class="material-icons right">keyboard_arrow_right</i></a></li>
             <li><a class='dropdown-button2 d' href='#' data-activates='varonis' data-hover="hover" data-alignment="left">Varonis<i class="material-icons right">keyboard_arrow_right</i></a></li>
         </ul>

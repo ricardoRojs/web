@@ -96,8 +96,8 @@ $dataBussines = $modulo->getModulo($marca);
                 <?php foreach ($dataBussines as $mod){?>
                     <div class="col m4 s12">
                         <div class="card sticky-action z-depth-3">
-                            <div class="card-content">
-                                <span class="card-title activator center-align"><?= $mod['moduloFull']?> (<?= $mod['moduloShort']?>)</span>
+                            <div class="card-content" style="height: 170px;">
+                                <span class="card-title activator center-align"><i class="material-icons right small orange-text">widgets</i><?= $mod['moduloFull']?> (<?= $mod['moduloShort']?>)</span>
 
                                 <p><?= $mod['moduloDesc']?></p>
                             </div>

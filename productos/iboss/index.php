@@ -1,9 +1,10 @@
 <?php 
     require_once ('../../modelo/Conexion.php');
     require_once ('../../modelo/Modulo.php');
+    require_once ('../../modelo/urlIndex.php');
 
     $modulo = new Modulo();
-    
+    $link = new urlIndex();
     $id = $_GET['id'];
     
     $datosModulo = $modulo->getIboss($id);
@@ -95,7 +96,7 @@ $urlVaron = "http://192.168.1.10/web/productos/varonis/index.php";
     </style>
       
   <!--Toda la modificacion -->
-  <?php include ("../componentes/menu.php");?>
+  <?php include("../../componentes/menu.php");?>
   <!--Toda la modificacion -->
         
   <div id="index-banner" class="parallax-container">
@@ -173,7 +174,7 @@ $urlVaron = "http://192.168.1.10/web/productos/varonis/index.php";
     </div>
   </div>
 
-    <?php include ("../componentes/pie.php");?>
+    <?php include("../../componentes/pie.php");?>
     
     </body>
 </html>

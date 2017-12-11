@@ -1,6 +1,9 @@
 <?php 
     require_once ('../../modelo/Conexion.php');
     require_once ('../../modelo/Modulo.php');
+    require_once ('../../modelo/urlIndex.php');
+
+    $link = new urlIndex();
 
     $modulo = new Modulo();
     
@@ -109,7 +112,7 @@
     </style>
       
   <!--Toda la modificacion -->
-  <?php include ("../componentes/menu.php");?>
+  <?php include("../../componentes/menu.php");?>
   <!--Toda la modificacion -->
         
   <div id="index-banner" class="parallax-container">
@@ -203,7 +206,7 @@
     <div class="parallax"><img src="../../img/background3.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-    <?php include ("../componentes/pie.php");?>
+    <?php include("../../componentes/pie.php");?>
     
     </body>
 </html>

@@ -3,6 +3,7 @@
     require_once ('../../modelo/Modulo.php');
     require_once ('../../modelo/urlIndex.php');
 
+    $link = new urlIndex();
     $modulo = new Modulo();
     
     $id = $_GET['id'];
@@ -135,7 +136,7 @@
     </style>
       
   <!--Toda la modificacion -->
-  <?php include ("../componentes/menu.php");?>
+  <?php include("../../componentes/menu.php");?>
   <!--Toda la modificacion -->
 
 
@@ -332,7 +333,7 @@
 
           </div>
       </div>
-    <?php include ("../componentes/pie.php");?>
+    <?php include("../../componentes/pie.php");?>
 
     </body>
 </html>

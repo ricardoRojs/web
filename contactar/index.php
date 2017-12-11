@@ -89,7 +89,7 @@ if($dataBussines){
 <body>
 
 <!--Toda la modificacion -->
-<?php include ("../productos/componentes/menu.php");?>
+<?php include("../productos/componentes/menu.php");?>
 <!--Toda la modificacion -->
 
 <div id="index-banner" class="parallax-container">
@@ -139,7 +139,7 @@ if($dataBussines){
     </div>
 </div>
 
-<?php include ("../productos/componentes/pie.php");?>
+<?php include("../productos/componentes/pie.php");?>
 
 </body>
 </html>

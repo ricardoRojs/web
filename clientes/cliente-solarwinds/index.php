@@ -3,6 +3,8 @@ require_once ('../../modelo/Conexion.php');
 require_once ('../../modelo/Modulo.php');
 require_once ('../../modelo/urlIndex.php');
 
+$link = new urlIndex();
+
 $modulo = new Modulo();
 
 $id = 602;
@@ -11,6 +13,7 @@ $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
 $nameFull;
+$marcaFull = "Clientes";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];
@@ -81,10 +84,10 @@ if($dataBussines){
         .material-icons, .icon-text {
             vertical-align: middle;
         }
-        #conte{
+        #conte1{
             background-image: url("img/mapa.png");
             opacity: 1;
-            margin: 20px;
+
         }
     </style>
 </head>
@@ -92,7 +95,7 @@ if($dataBussines){
 <body>
 
 <!--Toda la modificacion -->
-<?php include ("../../productos/componentes/menu.php");?>
+<?php include("../../componentes/menu.php");?>
 <!--Toda la modificacion -->
 
 <div id="index-banner" class="parallax-container">
@@ -102,12 +105,12 @@ if($dataBussines){
             <h2 class="header orange-text text-orange">Nuestros Clientes</h2>
         </div>
     </div>
-    <div class="parallax"><img src="../../img/slider.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="../../img/slider.jpg" alt="fondo 1"></div>
 </div>
 
 <div class="container">
     <div class="section">
-        <div class="row" id="conte">
+        <div class="row" id="conte1">
             <div class="col s12 center">
                 <h2 class="header center orange-text text-orange">Clientes en Latinoamerica</h2>
             </div>
@@ -149,7 +152,7 @@ if($dataBussines){
     </div>
 </div>
 
-<?php include ("../../productos/componentes/pie.php");?>
+<?php include("../../componentes/pie.php");?>
 
 </body>
 </html>

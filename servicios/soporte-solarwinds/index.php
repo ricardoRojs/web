@@ -4,6 +4,7 @@ require_once ('../../modelo/Modulo.php');
 require_once ('../../modelo/urlIndex.php');
 
 $modulo = new Modulo();
+$link = new urlIndex();
 
 $id = 602;
 
@@ -83,7 +84,7 @@ if($dataBussines){
 <body>
 
 <!--Toda la modificacion -->
-<?php include ("../../productos/componentes/menu.php");?>
+<?php include("../../componentes/menu.php");?>
 <!--Toda la modificacion -->
 
 <div id="index-banner" class="parallax-container">
@@ -162,7 +163,7 @@ if($dataBussines){
     </div>
 </div>
 
-<?php include ("../../productos/componentes/pie.php");?>
+<?php include("../../componentes/pie.php");?>
 
 </body>
 </html>

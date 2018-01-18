@@ -90,7 +90,7 @@ $dataBussines = $modulo->getModulo($marca);
     <div class="section">
         <div class="row">
             <div class="col s12 center">
-                <h2 class="header center orange-text text-orange"><?php echo ucfirst ($marca);;?></h2>
+                <h2 class="header center orange-text text-orange"><?php echo ucfirst ($marca);?></h2>
             </div>
             <div class="col s12">
                 <?php foreach ($dataBussines as $mod){?>
@@ -102,7 +102,7 @@ $dataBussines = $modulo->getModulo($marca);
                                 <p><?= $mod['moduloDesc']?></p>
                             </div>
                             <div class="card-action">
-                                <a href="<?= $link->url('solarwinds')."?id=".$mod['id']?>">Ver modulo</a>
+                                <a href="<?= $link->url(strtolower($marca))."?id=".$mod['id']?>">Ver modulo</a>
                             </div>
                         </div>
                     </div>

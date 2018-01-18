@@ -267,12 +267,12 @@
                                   <td><img src="img/net1.png" alt=""></td>
                                   <td><?php echo $moduloFrameNet;?></td>
                               </tr>
-                          <?php }else{?>
-                              <tr>
+                          <?php }//else{?>
+                              <!--<tr>
                                   <td><img src="img/peligro.png" alt=""></td>
                                   <td>Actualizando requerimientos</td>
-                              </tr>
-                          <?php }?>
+                              </tr>-->
+                          <?php //}?>
                           </tbody>
                       </table>
                       <p><b>Nota: </b><?php echo $nota;?><a href="http://clientes.gis-sac.com">contáctenos</a></p>

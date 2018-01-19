@@ -121,5 +121,22 @@ class Modulo{
         return $modulo;
         mysqli_close($conexion);
     }
+
+    public function getCliente($pais){
+        $modulo = null;
+        $modelo = new Conexion();
+        $conexion = $modelo->getConexion();
+
+        $sql = "SELECT * FROM gis_clientes WHERE pais=:pais";
+        $statement = $conexion->prepare($sql);
+        $statement->bindParam(':pais', $pais);
+        $statement->execute();
+
+        while ($filas = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $modulo[] = $filas;
+        }
+        return $modulo;
+        mysqli_close($conexion);
+    }
 }
 ?>

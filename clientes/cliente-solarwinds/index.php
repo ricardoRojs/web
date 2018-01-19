@@ -98,60 +98,87 @@ if($dataBussines){
 <?php include("../../componentes/menu.php");?>
 <!--Toda la modificacion -->
 
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container center">
-            <br>
-            <h2 class="header orange-text text-orange">Nuestros Clientes</h2>
-        </div>
-    </div>
-    <div class="parallax"><img src="../../img/slider.jpg" alt="fondo 1"></div>
-</div>
+<?php if (isset($_GET['pais'])){?>
 
 <div class="container">
     <div class="section">
-        <div class="row" id="conte1">
-            <div class="col s12 center">
-                <h2 class="header center orange-text text-orange">Clientes en Latinoamerica</h2>
-            </div>
-            <div class="col s12">
-                <br>
-                <br>
-                <br>
-                <br>
-                <div class="row">
+        <div class="row">
+<?php $clientes = $modulo->getCliente($_GET['pais']);
+    $tipo = "";
+    foreach ($clientes as $cli){
+        if($cli['tipo_cliente'] != $tipo){
+            $tipo = $cli['tipo_cliente'];
+             echo
+                 "</div>".
+            "</div>".
+            "<div style='padding: 6px;' class='teal lighten-1 z-depth-4'></div>".
+            "<div class='col s12 center'>".
+                "<h2 class='header center orange-text text-orange'>".$cli['tipo_cliente']."</h2>".
+            "</div>".
+            "<div class='col s12'>".
+                "<br>".
+                "<div class='row'>";
+        } ?>
                     <div class="col s12 m4">
-                        <div class="card blue-grey darken-1">
+                        <div class="card z-depth-4">
                             <div class="card-image">
-                                <a href="paises/peru.php" class="z-depth-5 waves-effect"><img src="img/peru.png"></a>
-                                <span class="card-title">Perú</span>
+                                <img alt="<?= $cli['nombre']?>" src="<?php echo $link->url("cliente")."cliente-solarwinds/img/peru/".$cli['img'];?>">
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m4">
-                        <div class="card blue-grey darken-1">
-                            <div class="card-image">
-                                <a href="paises/peru.php" class="z-depth-5 waves-effect"><img src="img/ecuador.png"></a>
-                                <span class="card-title">Ecuador</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="card blue-grey darken-1">
-                            <div class="card-image">
-                                <a href="paises/peru.php" class="z-depth-5 waves-effect"><img src="img/bolivia.png"></a>
-                                <span class="card-title">Bolivia</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-            </div>
+            <?php }  $tipo = $tipo; ?>
         </div>
     </div>
 </div>
 
+<?php }else{?>
+    <div class="container">
+        <div class="section">
+            <div class="row" id="conte1">
+                <div class="col s12 center">
+                    <h2 class="header center orange-text text-orange">Clientes en Latinoamerica</h2>
+                </div>
+                <div class="col s12">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-image">
+                                    <!--<a href="paises/peru.php" class="z-depth-5 waves-effect"><img src="img/peru.png"></a>-->
+                                    <a href="index.php?pais=peru" class="z-depth-5 waves-effect"><img src="img/peru.png"></a>
+                                    <span class="card-title">Perú</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-image">
+                                    <a href="index.php?pais=ecuador" class="z-depth-5 waves-effect"><img src="img/ecuador.png"></a>
+                                    <span class="card-title">Ecuador</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-image">
+                                    <a href="index.php?pais=bolivia" class="z-depth-5 waves-effect"><img src="img/bolivia.png"></a>
+                                    <span class="card-title">Bolivia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php }?>
+
+<!--pie de pagina-->
 <?php include("../../componentes/pie.php");?>
 
 </body>

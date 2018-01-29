@@ -1,9 +1,11 @@
 <?php
-require_once ('modelo/Conexion.php');
-require_once ('modelo/Modulo.php');
-require_once ('modelo/urlIndex.php');
+require_once ('../modelo/Conexion.php');
+require_once ('../modelo/Modulo.php');
+require_once ('../modelo/urlIndex.php');
 
 $modulo = new Modulo();
+$link = new urlIndex();
+$marcaFull = "Contactar";
 
 $id = 602;
 
@@ -67,13 +69,21 @@ if($dataBussines){
                     alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
+            $('input.autocomplete').autocomplete({
+                data: {
+                    "Solarwinds": 'img/solarwinds.png',
+                    "Iboss": 'img/iboss.png',
+                    "Varonis": 'img/varonis.png'
+                },
+                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+                onAutocomplete: function(val) {
+                    // Callback function when value is autcompleted.
+                },
+                minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+            });
+
 
         });
-        (function ($) {
-            $(function () {
-                $('.slider').slider();
-            });
-        })(jQuery);
     </script>
     <style>
         .dropdown-content{
@@ -89,35 +99,66 @@ if($dataBussines){
 <body>
 
 <!--Toda la modificacion -->
-<?php include("../productos/componentes/menu.php");?>
+<?php include("../componentes/menu.php");?>
 <!--Toda la modificacion -->
-
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container center">
-            <iframe allowfullscreen="" frameborder="0" height="450" src="http://www.gis-sac.com/Portal/banner/demo/" width="660"></iframe>
-        </div>
-    </div>
-    <div class="parallax"><img src="../img/slider.jpg" alt="Unsplashed background img 1"></div>
-</div>
 
 <div class="container">
     <div class="section">
         <div class="row">
             <div class="col s12 center">
-                <h2 class="header center orange-text text-orange"><?php echo $nameShort;?></h2>
+                <h2 class="header center orange-text text-orange">Formulario</h2>
             </div>
-            <div class="col s12">
-                <h5 class="header left">Quiénes somos</h5>
-                <br>
-                <br>
-                <p class="left-align">GIS S.A.C. es una empresa especializada en brindar a sus clientes las soluciones de seguridad TI y monitoreo siguientes:</p>
-                <ul>
-                    <li><i class="material-icons orange-text text-orange">check</i>Tecnología de punta para la gestión y la seguridad TI de una red corporativa frente a internet y sus usuarios finales.</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Soluciones para la administración y el monitoreo de plataformas de redes corporativas e infraestructuras tecnológicas.</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Brindamos Consultorías y servicios de seguridad TI.</li>
-                </ul>
-            </div>
+            <form action="#">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="col s12">
+                                    <p>
+                                        <input type="checkbox" id="test5" />
+                                        <label for="test5">Consulta Comercial</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="test6" />
+                                        <label for="test6">Consulta Técnica</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="test7" />
+                                        <label for="test7">Sugerencia</label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete">
+                                    <label for="autocomplete-input">Producto</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete">
+                                    <label for="autocomplete-input">Producto</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete">
+                                    <label for="autocomplete-input">Producto</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <div class="col s12">
                 <h5 class="header left">Nuestras Soluciones</h5>
                 <br>
@@ -139,7 +180,7 @@ if($dataBussines){
     </div>
 </div>
 
-<?php include("../productos/componentes/pie.php");?>
+<?php include("../componentes/pie.php");?>
 
 </body>
 </html>

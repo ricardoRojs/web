@@ -15,7 +15,8 @@ class urlIndex{
             "varonis" => "prodcutos/varonis/index.php",
             "servicio" => "servicios/soporte-solarwinds/",
             "cliente" => "clientes/",
-            "img" => "img/"
+            "img" => "img/",
+            "contactar" => "contactar/"
         );
         switch ($link){
             case "inicio":
@@ -44,6 +45,10 @@ class urlIndex{
                 break;
             case "img":
                 $url = $ip.$urls['img'];
+                return $url;
+                break;
+            case "contactar":
+                $url = $ip.$urls['contactar'];
                 return $url;
                 break;
             default:

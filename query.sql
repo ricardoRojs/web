@@ -64,3 +64,11 @@ INSERT
     (61, 'UP', 'universidad-pacifico-logo.png', 'peru', 'Salud y Eduación'),
     (62, 'UPAO', 'upao-logo.png', 'peru', 'Salud y Eduación'),
     (63, 'INICTEL-UNI', 'inictel-uni-logo.png', 'peru', 'Salud y Eduación');
+
+###
+
+INSERT INTO
+  gis_clientes_consultas
+  (id, producto, motivo, empresa, nombre, apellido, correo, celular, pais, ciudad, mensaje, fecha)
+VALUES
+  ('','','','','','','','','','','','')

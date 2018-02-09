@@ -1,0 +1,222 @@
+<style type="text/css">
+    .body{
+        width: 100% !important;
+        border-spacing:0;
+    }
+    nav {
+        /*background-color: #7db557;*/
+        background-color: #2196f3;
+        width: 100%;
+
+    }
+    nav .nav-background{
+        height: 350px;
+        top: 0;
+        opacity: .3;
+        bottom: 0;
+        -webkit-transform: none;
+        transform: none;
+        background-repeat: repeat;
+        background-image: url('http://web.gis-sac.com/img/new.png') !important;
+    }
+    #titulo{
+        font-family: "Roboto", sans-serif;
+        position: absolute;
+        left: 1%;
+        right: 1%;
+        top: 160px;
+        color: #fff;
+    }
+    .contenido {
+        font-family: "Roboto", sans-serif;
+        margin-top: 50px;
+    }
+    .pie{
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        color: #000 !important;
+    }
+    h2{
+        font-weight: 400;
+        font-size: 3.56rem;
+    }
+    p{
+        display: block;
+        -webkit-margin-before: 1em;
+        -webkit-margin-after: 1em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+    table{
+        border-collapse:collapse;
+        border-spacing:0;
+    }
+    td,th{
+        padding:0;
+    }
+    table,th,td{
+        border:none
+    }
+
+    @media only screen and (min-width: 0){
+        html{
+            font-size:14px
+        }
+    }
+    @media only screen and (min-width: 992px){
+        html{
+            font-size:14.5px
+        }
+    }@media only screen and (min-width: 1200px){
+        html{
+            font-size:15px
+        }
+    }
+
+    .center-align {
+        text-align: center;
+    }
+
+</style>
+<div class="container">
+    <table class="body">
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td align="center">
+                <table>
+                    <thead></thead>
+                    <tbody>
+                    <tr>
+                        <td align="center" width="70%">
+                            <nav>
+                                <div class="nav-background">
+                                    <div class="nav-background">
+                                    </div>
+                                </div>
+                                <div id="titulo">
+                                    <h2>Global Investment Solutions S.A.C</h2>
+                                </div>
+                            </nav>
+                            <div class="contenido">
+                                "<table>".
+                                "<thead>".
+                                "<tr>".
+                                    "<th colspan='2'>Cliente interesado en ".$datos['motivo']." ".$datos['producto']."</th>".
+                                    "</tr>".
+                                "</thead>".
+                                "<tbody align="left">".
+                                "<tr>".
+                                    "<td><b>Empresa</b></td>".
+                                    "<td>".$datos['empresa']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Nombre</b></td>".
+                                    "<td>".$datos['nombre']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Apellido</b></td>".
+                                    "<td>".$datos['apellido']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Correo</b></td>".
+                                    "<td>".$datos['correo']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Celular</b></td>".
+                                    "<td>".$datos['celular']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Pais</b></td>".
+                                    "<td>".$datos['pais']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Ciudad</b></td>".
+                                    "<td>".$datos['ciudad']."</td>".
+                                "</tr>".
+                                "<tr>".
+                                    "<td><b>Mensaje</b></td>".
+                                    "<td>".$datos['mensaje']."</td>".
+                                    "</tr>".
+                                "</tbody>".
+                                "</table>";
+                            </div>
+                            <br>
+                            <div class="pie center-align" >
+                                <p>Global Investment Solutions S.A.C 2018, Surco, Lima, Peru</p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+    "<table style='width: 100% !important; border-spacing:0;'>".
+        "<thead></thead>".
+        "<tbody>".
+        "<tr>".
+            "<td align='center'>".
+                "<table width='70%'>".
+                    "<thead></thead>".
+                    "<tbody align='left'>".
+                    "<tr>".
+                        "<td colspan='2'>".
+                            "<nav style='background-color: #2196f3; width: 100%;'>".
+                               "<div style='height: 350px; top: 0;  opacity: .3; bottom: 0; -webkit-transform: none; transform: none; background-repeat: repeat;background-image: url("http://web.gis-sac.com/img/new.png") !important;'></div>".
+                               "<div style='font-family: "Roboto", sans-serif; position: absolute; left: 1%; right: 1%; top: 160px; color: #fff;' align='center'>".
+                                    "<h2 style='font-weight: 400; font-size: 3.56rem;'>Global Investment Solutions S.A.C</h2>".
+                               "</div>
+                            "</nav>
+                        "</td>"
+                        "</tr>".
+                    "<tr>".
+                        "<td width='40%' align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Empresa</b></p></td>".
+                        "<td width='60%' ><p style='font-family: "Roboto", sans-serif'>".$datos['empresa']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Nombre</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['nombre']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Apellido</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['apellido']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Correo</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['correo']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Celular</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['celular']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Pais</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['pais']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Ciudad</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['ciudad']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Mensaje</b></p></td>".
+                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['mensaje']."</p></td>".
+                        "</tr>".
+                    "<tr>".
+                        "<td colspan='2' style='background: #5a5a5a; margin-top: 10px;'>".
+                            "<div align='center' style='font-family: \"Roboto\", sans-serif; font-size: 12px;'>".
+                            "<p style='display: block; color: white;' align='center'>Global Investment Solutions S.A.C 2018, Surco, Lima, Peru</p>".
+                            "</div>".
+                        "</td>".
+                        "</tr>".
+
+                    "</tbody>".
+                    "</table>".
+                "</td>".
+            "</tr>".
+        "</tbody>".
+        "</table>";
+

@@ -39,7 +39,7 @@ if($dataBussines){
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function(){
             $('.parallax').parallax();
             $('.button-collapse').sideNav();
@@ -299,12 +299,12 @@ if($dataBussines){
 
         });
     </script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function(){
             $('#btn-enviar').click(function(){
-                var url = "../controlador/contactar.php";
+                var url = "contactar.php";
                 $.ajax({
-                    type: "POST",
+                    method: "POST",
                     url: url,
                     data: $("#formulario").serialize(),
                     beforeSend: function (){
@@ -313,7 +313,9 @@ if($dataBussines){
                     },
                     success: function(data){
                         $('#resp').html(data);
-
+                    },
+                    error: function (data){
+                        $('#resp').html(data);
                     }
                 });
             });
@@ -355,7 +357,7 @@ if($dataBussines){
                             <div class="input-field col s12">
                                 <i class="material-icons prefix orange-text">account_balance_wallet</i>
                                 <select name="motivo" required>
-                                    <option value="" selected></option>
+                                    <option value="" disabled selected>Motivo</option>
                                     <option value="Consulta Comercial">Consulta Comercial</option>
                                     <option value="Consulta Técnica">Consulta Técnica</option>
                                     <option value="Sugerencia">Sugerencia</option>

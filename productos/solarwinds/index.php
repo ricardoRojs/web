@@ -143,27 +143,27 @@
               <div class="container center">
                   <h2 class="header center orange-text text-orange"><?php echo $moduloFull;?></h2>
                   <div class="row">
-                      <div class="col m6">
+                      <div class="col m12">
                           <div class="left-align" style="padding: 25px 10px 50px 10px;">
                               <h5 class="header col s12 light"><?php echo $subTitulo;?></h5>
                           </div>
-                          <div class="left-align" style="padding: 70px 10px 50px 10px;">
+                          <div class="right-align" style="padding: 70px 10px 50px 10px;">
                               <br>
                               <p>
-                                  <b>Precio Referencial : S/. 17,900</b>
-                                  <i class="material-icons small">trending_flat</i> <a class="btn z-depth-3 waves-effect waves-light orange lighten-1">Cotizar<i class="material-icons small grey-text left">assignment</i></a>
+                                  <b>Precio referencial desde: <?php $precio = "S/. 17,900"; echo $precio;?></b>
+                                  <i class="material-icons small">trending_flat</i> <a href="#"><i class="material-icons medium grey-text">assignment</i></a>
                               </p>
                               <br>
 
                           </div>
-                          <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="left" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
-                          <a href="<?php echo $downSolar;?>" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition" data-position="right" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
+                          <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="right" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
+                          <a href="<?php echo $downSolar;?>" id="download-button" class="z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="left" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
                       </div>
-                      <div class="col m6 right-align">
+                      <!--<div class="col m6 right-align">
                           <br>
                           <br>
                           <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="500px" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-                      </div>
+                      </div>-->
                   </div>
               </div>
 
@@ -177,6 +177,7 @@
                           <li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>
                           <li class="tab"><a href="#test3" class="orange-text">Requisitos</a></li>
                           <li class="tab"><a href="#test4" class="orange-text">Videos</a></li>
+                          <li class="tab"><a href="#test5" class="orange-text">Hoja de datos</a></li>
                       </ul>
                   </div>
                   <div id="test1" class="col s12">
@@ -288,6 +289,12 @@
                       </div>
                       <!--Toda la modificacion de contenido-->
 
+                  </div>
+                  <div id="test5" class="col s12">
+                      <div class="col s12 m12 center">
+                          <br>
+                          <iframe src="http://192.168.1.10/web/pdf/web/viewer.html?file=http://192.168.1.10/web/productos/solarwinds/npm/pdf/npm_datasheet.pdf" width="100%" height="600px"></iframe>
+                      </div>
                   </div>
               </div>
           </div>

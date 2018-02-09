@@ -35,7 +35,7 @@
     </div>
     <div class="footer-copyright blue-text">
       <div class="container">
-      <p>Copyright © Global Investment Solutions S.A.C 2017</p>
+      <p>Copyright © Global Investment Solutions S.A.C 2018</p>
       </div>
     </div>
   </footer>

@@ -3,7 +3,6 @@
         /*background-color: #7db557;*/
         background-color: #2196f3;
 
-
     }
     nav .nav-background{
         height: 350px;

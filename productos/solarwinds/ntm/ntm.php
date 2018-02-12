@@ -7,15 +7,16 @@
             conmutación a enrutador).
         </p>
     </div>
+
     <div class="col s12">
-        <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-        <ul>
-            <li><i class="material-icons orange-text text-orange">check</i>Rastreo automatizado de direcciones IP</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Administración integrada de direcciones IP, DHCP y DNS</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Alertas, detección y solución de problemas, e informes sobre IP</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Soporte de DNS y DHCP de varios proveedores</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Integración con VMware vRealize Orchestrator</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Compatibilidad de API</li>
-        </ul>
+        <h5 class="black-text">Principales características:</h5>
+        <br>
+        <div class="circles-list">
+            <ol>
+                <?php for($x = 0; $x < sizeof($claves); $x++){
+                    echo "<li><b>".$claves[$x].".</b></li>";
+                }?>
+            </ol>
+        </div>
     </div>
 </div>

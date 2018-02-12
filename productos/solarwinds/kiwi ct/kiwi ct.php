@@ -10,15 +10,16 @@
             de configuración y la administración de copias de seguridad.
         </p>
     </div>
+
     <div class="col s12">
-        <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-        <ul>
-            <li><i class="material-icons orange-text text-orange">check</i>Programe copias de seguridad automatizadas</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Realice cambios de configuración en masa</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Aumente la seguridad</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Revierta la configuración de la red</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Compare y analice cambios en la configuración</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Genere informes de correo electrónico automatizados</li>
-        </ul>
+        <h5 class="black-text">Principales características:</h5>
+        <br>
+        <div class="circles-list">
+            <ol>
+                <?php for($x = 0; $x < sizeof($claves); $x++){
+                    echo "<li><b>".$claves[$x].".</b></li>";
+                }?>
+            </ol>
+        </div>
     </div>
 </div>

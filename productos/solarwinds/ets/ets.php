@@ -8,15 +8,16 @@
             ETS utiliza una interfaz sencilla integrable a NPM.
         </p>
     </div>
+
     <div class="col s12">
-        <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-        <ul>
-            <li><i class="material-icons orange-text text-orange ">check</i>Detección de redes automatizada</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Monitoreo y alertas en tiempo real</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Potentes capacidades de diagnóstico</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Seguridad de red mejorada</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Configuración y administración del registro</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Monitoreo de direcciones IP y ámbitos DHCP</li>
-        </ul>
+        <h5 class="black-text">Principales características:</h5>
+        <br>
+        <div class="circles-list">
+            <ol>
+                <?php for($x = 0; $x < sizeof($claves); $x++){
+                    echo "<li><b>".$claves[$x].".</b></li>";
+                }?>
+            </ol>
+        </div>
     </div>
 </div>

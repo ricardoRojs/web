@@ -25,6 +25,7 @@
     $moduloBaseDatos;
     $moduloServerWeb;
     $moduloFrameNet;
+    $key_modulo;
 
     if($datosModulo){
         //caracteristicas de cada modulo
@@ -46,6 +47,9 @@
         $moduloFrameNet = $datosModulo['moduloFrameNet'];
         $video = $datosModulo['video'];
         $periodo = $datosModulo['periodo'];
+
+        //descripcion de cada modulo
+        $key_modulo = $datosModulo['key_modulo'];
     }
 ?>
 <!DOCTYPE html>
@@ -133,6 +137,38 @@
            margin: 0 0 0 0;
            vertical-align: middle;
        }
+       .circles-list ol > li:before {
+           position: absolute;
+           top: -0.5em;
+           font-family: "Roboto", sans-serif;
+           font-weight: 600;
+           font-size: 1em;
+           left: -3.75em;
+           width: 2.25em;
+           height: 2.25em;
+           line-height: 2.25em;
+           text-align: center;
+           z-index: 9;
+           color: #ff9800;
+           border: 2px solid #ff9800;
+           border-radius: 50%;
+           content: counter(li-counter);
+           background-color: #eeeeee;
+           counter-increment: li-counter;
+       }
+       .circles-list ol {
+           list-style-type: none;
+           margin-left: 1.25em;
+           padding-left: 2.5em;
+           counter-reset: li-counter;
+           border-left: 1px solid #ff9800;
+           position: relative;
+       }
+       .circles-list ol > li {
+           position: relative;
+           margin-bottom: 2.125em;
+           clear: both;
+       }
     </style>
       
   <!--Toda la modificacion -->
@@ -189,6 +225,13 @@
                               <img class="right" src="img/solarpartner.png" alt="Marca">
                           </div>
                       </div>
+                      <?php
+                      if($key_modulo != null){
+                          $claves = explode("-", $key_modulo);
+                      }else{
+                          $claves = array("llene la tabla .... < key_modulo >");
+                      }
+                      ?>
                       <?php
                       $path = strtolower($moduloShort."/".$moduloShort.".php");
                       include ($path);?>

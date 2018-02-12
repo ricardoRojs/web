@@ -8,15 +8,16 @@
             en un appliance virtual que es fácil de implementar, gestionar y utilizar.
         </p>
     </div>
+
     <div class="col s12">
-        <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-        <ul>
-            <li><i class="material-icons orange-text text-orange ">check</i>Generación rápida y sencilla de informes de cumplimiento</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Correlación de eventos en tiempo real</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Corrección en tiempo real</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Búsqueda y análisis forenses avanzados</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Monitoreo de la integridad de los archivos</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Monitoreo de dispositivos USB</li>
-        </ul>
+        <h5 class="black-text">Principales características:</h5>
+        <br>
+        <div class="circles-list">
+            <ol>
+                <?php for($x = 0; $x < sizeof($claves); $x++){
+                    echo "<li><b>".$claves[$x].".</b></li>";
+                }?>
+            </ol>
+        </div>
     </div>
 </div>

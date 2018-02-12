@@ -197,6 +197,7 @@
             <li><a class="dropdown-button" href="#" data-activates="productos">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="ser-servicio">Servicio<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="nue-cliente">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="<?= $link->url("licencia") ?>">Licencias</a></li>
             <li><a href="<?= $link->url("contactar")?>">Contactenos</a></li>
         </ul>
 

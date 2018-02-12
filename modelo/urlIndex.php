@@ -16,7 +16,8 @@ class urlIndex{
             "servicio" => "servicios/soporte-solarwinds/",
             "cliente" => "clientes/",
             "img" => "img/",
-            "contactar" => "contactar/"
+            "contactar" => "contactar/",
+            "licencia" => "licencia/"
         );
         switch ($link){
             case "inicio":
@@ -49,6 +50,10 @@ class urlIndex{
                 break;
             case "contactar":
                 $url = $ip.$urls['contactar'];
+                return $url;
+                break;
+            case "licencia":
+                $url = $ip.$urls['licencia'];
                 return $url;
                 break;
             default:

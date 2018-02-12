@@ -16,17 +16,18 @@
                 
                 <p class="left-align">Con la herramienta NPM, usted contará con una solución de monitoreo fácil de usar y
                     escalable para realizar el monitoreo de su plataforma tecnológica y de misión crítica.</p>
-        </div>
-            <div class="col s12">
-                <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-                <ul>
-                    <li><i class="material-icons orange-text text-orange">check</i>Monitoreo de la salud del hardware</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Monitoreo de red de varios proveedores</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Visualización de rutas críticas de NetPath™</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Panel de análisis de desempeño</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Alertas inteligentes</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Network Insight para Cisco ASA</li>
-                    <li><i class="material-icons orange-text text-orange">check</i>Network Insight para F5 BIG-IP</li>
-                </ul>
             </div>
+        </div>
+
+        <div class="col s12">
+            <h5 class="black-text">Principales características:</h5>
+            <br>
+            <div class="circles-list">
+                <ol>
+                    <?php for($x = 0; $x < sizeof($claves); $x++){
+                        echo "<li><b>".$claves[$x].".</b></li>";
+                    }?>
+                </ol>
+            </div>
+        </div>
       </div>

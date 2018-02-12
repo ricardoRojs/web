@@ -4,16 +4,16 @@
                 
                 <p class="left-align">Con la herramienta NPM, usted contará con una solución de monitoreo fácil de usar y escalable para realizar el monitoreo de su plataforma tecnológica y de misión crítica.</p>
         </div>
-        <div class="col s12">
-          <h5 class="black-text">Algunas de las funcionalidades  que se obtienen con <?php echo $marcaFull." ".$moduloFull;?> son:</h5>
-          <ul>
-            <li><i class="material-icons orange-text text-orange">check</i>Disponibilidad de los dispositivos y elementos que componen la infraestructura  de TI.</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Capacidad y utilización de ancho de banda de Switches, enrutadores e interfaces  de red</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Utilización y errores de buffer</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Utilización de CPU y memoria física y virtual</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Utilización de discos duros.</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Latencia de la red.</li>
-            <li><i class="material-icons orange-text text-orange">check</i>Errores y descartes de Interfaces.</li>
-          </ul>
-        </div>
+
+            <div class="col s12">
+                <h5 class="black-text">Principales características:</h5>
+                <br>
+                <div class="circles-list">
+                    <ol>
+                        <?php for($x = 0; $x < sizeof($claves); $x++){
+                            echo "<li><b>".$claves[$x].".</b></li>";
+                        }?>
+                    </ol>
+                </div>
+            </div>
       </div>

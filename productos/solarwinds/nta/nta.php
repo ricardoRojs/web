@@ -8,15 +8,16 @@
                     NPM
                 </p>
         </div>
-        <div class="col s12">
-            <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-          <ul>
-              <li><i class="material-icons orange-text text-orange ">check</i>Monitoreo del ancho de banda</li>
-              <li><i class="material-icons orange-text text-orange ">check</i>Análisis del tráfico de red</li>
-              <li><i class="material-icons orange-text text-orange ">check</i>Panel de análisis de desempeño</li>
-              <li><i class="material-icons orange-text text-orange ">check</i>Optimización de la política de CBQoS</li>
-              <li><i class="material-icons orange-text text-orange ">check</i>Informes personalizables del tráfico de red</li>
-              <li><i class="material-icons orange-text text-orange ">check</i>Reconocimiento de aplicaciones avanzadas de NBAR2</li>
-          </ul>
-        </div>
+
+            <div class="col s12">
+                <h5 class="black-text">Principales características:</h5>
+                <br>
+                <div class="circles-list">
+                    <ol>
+                        <?php for($x = 0; $x < sizeof($claves); $x++){
+                            echo "<li><b>".$claves[$x].".</b></li>";
+                        }?>
+                    </ol>
+                </div>
+            </div>
       </div>

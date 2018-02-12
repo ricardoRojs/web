@@ -6,7 +6,7 @@
 class Modulo{
     
 	/**
-	* Obtenemos información de solarwinds
+	* Obtenemos información de los modulos solarwinds, iboss, varonis...
 	*/
 	public function getSolarwinds($id){
 

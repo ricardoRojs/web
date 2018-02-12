@@ -7,15 +7,16 @@
             sencilla integrable a NPM
         </p>
     </div>
+    
     <div class="col s12">
-        <h5 class="black-text"><i class="material-icons orange-text text-orange small left">vpn_key</i>Principales características:</h5>
-        <ul>
-            <li><i class="material-icons orange-text text-orange ">check</i>Localice rápidamente los dispositivos de red</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Asigne y monitoree WAP, conmutadores y puertos</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Administre la capacidad de puertos de conmutador y conmutadores</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Detecte dispositivos y usuarios fraudulentos</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Encienda y apague puertos de forma remota</li>
-            <li><i class="material-icons orange-text text-orange ">check</i>Panel de administración de TI unificado</li>
-        </ul>
+        <h5 class="black-text">Principales características:</h5>
+        <br>
+        <div class="circles-list">
+            <ol>
+                <?php for($x = 0; $x < sizeof($claves); $x++){
+                    echo "<li><b>".$claves[$x].".</b></li>";
+                }?>
+            </ol>
+        </div>
     </div>
 </div>

@@ -350,7 +350,7 @@
                           <div class="col s12 m3">
                               <div class="card blue-grey darken-1">
                                   <div class="card-content white-text">
-                                      <span class="card-title">Ejemplo 1</span>
+                                      <span class="card-title">Cliente 1</span>
                                       <p>Reduzca las interrupciones de la red y detecte, diagnostique y
                                           resuelva rápidamente los problemas de desempeño de la red de
                                           múltiples proveedores con software de monitoreo de redes fácil
@@ -361,7 +361,53 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="col s12 m9">
+                          <div class="col s12 m3">
+                              <br>
+                              <br>
+                              <div class="card blue-grey darken-1">
+                                  <div class="card-content white-text">
+                                      <span class="card-title">Cliente 1</span>
+                                      <p>Reduzca las interrupciones de la red y detecte, diagnostique y
+                                          resuelva rápidamente los problemas de desempeño de la red de
+                                          múltiples proveedores con software de monitoreo de redes fácil
+                                          de usar y económico.</p>
+                                  </div>
+                                  <div class="card-action">
+
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col s12 m3">
+                              <div class="card blue-grey darken-1">
+                                  <div class="card-content white-text">
+                                      <span class="card-title">Cliente 1</span>
+                                      <p>Reduzca las interrupciones de la red y detecte, diagnostique y
+                                          resuelva rápidamente los problemas de desempeño de la red de
+                                          múltiples proveedores con software de monitoreo de redes fácil
+                                          de usar y económico.</p>
+                                  </div>
+                                  <div class="card-action">
+
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col s12 m3">
+                              <br>
+                              <br>
+                              <div class="card blue-grey darken-1">
+                                  <div class="card-content white-text">
+                                      <span class="card-title">Cliente 1</span>
+                                      <p>Reduzca las interrupciones de la red y detecte, diagnostique y
+                                          resuelva rápidamente los problemas de desempeño de la red de
+                                          múltiples proveedores con software de monitoreo de redes fácil
+                                          de usar y económico.</p>
+                                  </div>
+                                  <div class="card-action">
+
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col s12 m3">
                           </div>
                       </div>
                   </div>

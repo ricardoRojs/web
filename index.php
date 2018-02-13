@@ -38,6 +38,11 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <!-- Slider principal -->
+        <script type="text/javascript" src="js/slides.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="css/slides.css">
+        <link type="text/css" rel="stylesheet" href="css/banner.css">
       <script>
         $(document).ready(function(){
             $('.parallax').parallax();
@@ -68,6 +73,20 @@
                 alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+                //auto: false,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
             
         });
       </script>
@@ -91,6 +110,24 @@
   <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
           <div class="container center">
+
+              <div id="wrapper">
+                  <!-- Slideshow 4 -->
+                  <div class="callbacks_container">
+                      <ul class="rslides" id="slider4">
+                          <li>
+                              <img src="img/marcas/solarwinds-4.png" alt="Solarwinds">
+                          </li>
+                          <li>
+                              <img src="img/marcas/iboss-3.png" alt="Iboss">
+                          </li>
+                          <li>
+                              <img src="img/marcas/Varonis-3.png" alt="Varonis">
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
               <iframe allowfullscreen="" frameborder="0" height="450" src="http://www.gis-sac.com/Portal/banner/demo/" width="660"></iframe>
           </div>
       </div>

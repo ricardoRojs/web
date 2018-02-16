@@ -33,9 +33,7 @@
         <div class="nav-background" id="fondo"></div>
     </div>
     <div class="nav-wrapper container" id="conte">
-        <img src="<?php echo $link->url("img")."gis-sac-2.png"; ?>" alt="Logo" height="60px" width="60px"/>
-
-        <a href="/" itemprop="url" class="brand-logo site-logo">GIS SAC</a>
+        <a href="<?= $link->url("inicio")?>" itemprop="url"><img src="<?php echo $link->url("img")."logo-gis2.png"; ?>" alt="Logo" width="25%"/></a>
 
         <ul id='productos' class='dropdown-content'>
             <li><a class='dropdown-button2 d' href='<?php echo  $link->url("inicio")."productos/index.php?marca=solarwinds"?>' data-activates='solarwinds' data-hover="hover" data-alignment="left">Solarwinds<i class="material-icons right">keyboard_arrow_right</i></a></li>
@@ -195,7 +193,7 @@
         <ul class="right hide-on-med-and-down">
             <li><a href="<?= $link->url("inicio")?>">Inicio</a></li>
             <li><a class="dropdown-button" href="#" data-activates="productos">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-button" href="#" data-activates="ser-servicio">Servicio<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button" href="#" data-activates="ser-servicio">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="nue-cliente">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="<?= $link->url("licencia") ?>">Licencias</a></li>
             <li><a href="<?= $link->url("contactar")?>">Contactenos</a></li>

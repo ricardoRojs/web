@@ -199,7 +199,7 @@
           <a href="<?php echo $downSolar;?>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Descargar demo</a>
             
           <a href="#requisitos" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 modal-trigger">Requerimientos</a>
-          <?php include_once ("requisitos.php");?>
+
         </div>
       </div>
     </div>

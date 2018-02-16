@@ -22,28 +22,25 @@
     }
 ?>
 <!DOCTYPE html>
-  <html>
-    <head>
-      <link rel="icon" href="img/favicon.png" type="image/icon"/>
-      <meta charset="utf-8"/>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        
-      <title><?php echo $nameFull;?></title>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+<html>
+<head>
+    <link rel="icon" href="img/favicon.png" type="image/icon"/>
+    <meta charset="utf-8"/>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-        <!-- Slider principal -->
-        <script type="text/javascript" src="js/slides.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="css/slides.css">
-        <link type="text/css" rel="stylesheet" href="css/banner.css">
-      <script>
+    <title><?php echo $nameFull;?></title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+    <script>
         $(document).ready(function(){
             $('.parallax').parallax();
             $('.button-collapse').sideNav();
@@ -51,57 +48,42 @@
                 fullWidth: true
             });
             $('.dropdown-button2').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
-                gutter: ($('.dropdown-content').width()),
-                // Spacing from edge
-                belowOrigin: false, // Displays dropdown below the button
-                alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: ($('.dropdown-content').width()),
+                    // Spacing from edge
+                    belowOrigin: false, // Displays dropdown below the button
+                    alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
             $('.dropdown-button').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
-                gutter: 0,
-                //gutter: ($('.dropdown-content').width()*3)/2.5 + 5,
-                // Spacing from edge
-                belowOrigin: true, // Displays dropdown below the button
-                alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: 0,
+                    //gutter: ($('.dropdown-content').width()*3)/2.5 + 5,
+                    // Spacing from edge
+                    belowOrigin: true, // Displays dropdown below the button
+                    alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
-            // Slideshow 4
-            $("#slider4").responsiveSlides({
-                //auto: false,
-                pager: false,
-                nav: true,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
-            
         });
-      </script>
-      <style>
-           .dropdown-content{
-                overflow: visible !important;
-                width: 195px !important;
-            }
-            .material-icons, .icon-text {
-                vertical-align: middle;
-            }
-       </style>
-    </head>
+    </script>
+    <style>
+        .dropdown-content{
+            overflow: visible !important;
+            width: 195px !important;
+        }
+        .material-icons, .icon-text {
+            vertical-align: middle;
+        }
+    </style>
+</head>
 
-    <body>
+<body>
       
   <!--Toda la modificacion -->
   <?php include("componentes/menu.php");?>
@@ -110,25 +92,8 @@
   <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
           <div class="container center">
+              <iframe allowfullscreen="" frameborder="0" height="390" src="banner/demo/index.html" width="570"></iframe>
 
-              <div id="wrapper">
-                  <!-- Slideshow 4 -->
-                  <div class="callbacks_container">
-                      <ul class="rslides" id="slider4">
-                          <li>
-                              <img src="img/marcas/solarwinds-4.png" alt="Solarwinds">
-                          </li>
-                          <li>
-                              <img src="img/marcas/iboss-3.png" alt="Iboss">
-                          </li>
-                          <li>
-                              <img src="img/marcas/Varonis-3.png" alt="Varonis">
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <iframe allowfullscreen="" frameborder="0" height="450" src="http://www.gis-sac.com/Portal/banner/demo/" width="660"></iframe>
           </div>
       </div>
     <div class="parallax"><img src="img/slider.jpg" alt="Unsplashed background img 1"></div>
@@ -173,6 +138,5 @@
   </div>
         
     <?php include("componentes/pie.php");?>
-
-    </body>
+   </body>
 </html>

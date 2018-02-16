@@ -122,7 +122,7 @@ if($dataBussines){
                     <div class="col s12 m4">
                         <div class="card z-depth-4">
                             <div class="card-image">
-                                <img alt="<?= $cli['nombre']?>" src="<?php echo $link->url("cliente")."cliente-solarwinds/img/peru/".$cli['img'];?>">
+                                <a href="<?= $cli['url-cliente']?>" target="_blank"><img alt="<?= $cli['nombre']?>" src="<?php echo $link->url("cliente")."cliente-solarwinds/img/peru/".$cli['img'];?>"></a>
                             </div>
                         </div>
                     </div>

@@ -76,51 +76,36 @@
     .center-align {
         text-align: center;
     }
-    .circles-list ol > li:before {
+    .csslider1 > .cs_arrownext > label span:after {
+        content: '\e800';
+    }
+    .csslider1 > .cs_arrowprev > label span:after, .csslider1 > .cs_arrownext > label span:after {
+        display: block;
         position: absolute;
-        top: -0.5em;
-        font-family: "Roboto", sans-serif;
-        font-weight: 600;
-        font-size: 1em;
-        left: -3.75em;
-        width: 2.25em;
-        height: 2.25em;
-        line-height: 2.25em;
+        width: 100%;
+        top: 50%;
+        margin-top: -23px;
+        font: 32px "bootstrapcontrols";
+        color: #fff;
+        line-height: 47px;
         text-align: center;
-        z-index: 9;
-        color: #ff9800;
-        border: 2px solid #ff9800;
-        border-radius: 50%;
-        content: counter(li-counter);
-        background-color: #eeeeee;
-        counter-increment: li-counter;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
-    .circles-list ol {
-        list-style-type: none;
-        margin-left: 1.25em;
-        padding-left: 2.5em;
-        counter-reset: li-counter;
-        border-left: 1px solid #ff9800;
-        position: relative;
+    .csslider1 > .cs_arrowprev > label span:after, .csslider1 > .cs_arrownext > label span:after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        margin-top: -23px;
+        font: 32px "bootstrapcontrols";
+        color: #fff;
+        line-height: 47px;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
-    .circles-list ol > li {
-        position: relative;
-        margin-bottom: 3.125em;
-        clear: both;
-    }
+
 
 </style>
-    <div class="circles-list">
-        <ol>
-            <li>Crea una cuenta de Canva para diseñar tu propio gráfico de líneas.</li>
-            <li>Selecciona el tipo de diseño "Gráficas" en la pestaña Elementos o busca "Gráficas" en la pestaña Buscar.</li>
-            <li>Elige el ícono "Gráfico&nbsp;de líneas".</li>
-            <li>Haz clic en "Datos" en la barra de herramientas para insertar o escribir los valores y categorías de tu gráfica.</li>
-            <li>Personaliza los&nbsp;colores de las líneas y la tipografía de las categorías.</li>
-            <li>Save and Share.</li>
-        </ol>
-    </div>
-
 <div class="container">
     <table class="body">
         <thead></thead>
@@ -198,68 +183,51 @@
     </table>
 </div>
 
-    "<table style='width: 100% !important; border-spacing:0;'>".
-        "<thead></thead>".
-        "<tbody>".
-        "<tr>".
-            "<td align='center'>".
-                "<table width='70%'>".
-                    "<thead></thead>".
-                    "<tbody align='left'>".
-                    "<tr>".
-                        "<td colspan='2'>".
-                            "<nav style='background-color: #2196f3; width: 100%;'>".
-                               "<div style='height: 350px; top: 0;  opacity: .3; bottom: 0; -webkit-transform: none; transform: none; background-repeat: repeat;background-image: url("http://web.gis-sac.com/img/new.png") !important;'></div>".
-                               "<div style='font-family: "Roboto", sans-serif; position: absolute; left: 1%; right: 1%; top: 160px; color: #fff;' align='center'>".
-                                    "<h2 style='font-weight: 400; font-size: 3.56rem;'>Global Investment Solutions S.A.C</h2>".
-                               "</div>
-                            "</nav>
-                        "</td>"
-                        "</tr>".
-                    "<tr>".
-                        "<td width='40%' align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Empresa</b></p></td>".
-                        "<td width='60%' ><p style='font-family: "Roboto", sans-serif'>".$datos['empresa']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Nombre</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['nombre']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Apellido</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['apellido']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Correo</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['correo']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Celular</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['celular']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Pais</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['pais']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Ciudad</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['ciudad']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td align='right' style='padding: 10px'><p style='font-family: "Roboto", sans-serif'><b>Mensaje</b></p></td>".
-                        "<td><p style='font-family: "Roboto", sans-serif'>".$datos['mensaje']."</p></td>".
-                        "</tr>".
-                    "<tr>".
-                        "<td colspan='2' style='background: #5a5a5a; margin-top: 10px;'>".
-                            "<div align='center' style='font-family: \"Roboto\", sans-serif; font-size: 12px;'>".
-                            "<p style='display: block; color: white;' align='center'>Global Investment Solutions S.A.C 2018, Surco, Lima, Peru</p>".
-                            "</div>".
-                        "</td>".
-                        "</tr>".
 
-                    "</tbody>".
-                    "</table>".
-                "</td>".
-            "</tr>".
-        "</tbody>".
-        "</table>";
 
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="http://cssslider.com/sliders/demo-10/data1/images/1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="http://cssslider.com/sliders/demo-10/data1/images/2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="http://cssslider.com/sliders/demo-10/data1/images/3.jpg" alt="Third slide">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

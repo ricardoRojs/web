@@ -37,9 +37,6 @@ if($dataBussines){
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
-    <link rel="stylesheet" type="text/css" href="../css/slicebox.css" />
-    <link rel="stylesheet" type="text/css" href="../css/custom.css" />
-    <script type="text/javascript" src="../js/modernizr.custom.46884.js"></script>
 </head>
 
 <body>
@@ -77,7 +74,57 @@ if($dataBussines){
                 alignment: 'left' // Displays dropdown with edge aligned to the left of button
             }
         );
+        $('input.text-buscar').autocomplete({
+            data: {
+                'Network Performance Monitor': null,
+                'NetFlow Traffic Analyzer': null,
+                'Network Configuration Manager': null,
+                'IP Address Manager': null,
+                'User Device Tracker': null,
+                'VoIP & Network Quality Manager': null,
+                'Log & Event Manager': null,
+                'Engineers Toolset': null,
+                'Network Topology Mapper': null,
+                'Kiwi CatTools': null,
+                'Kiwi Syslog Server': null,
+                'Server & Application Monitor': null,
+                'Virtualization Manager': null,
+                'Storage Resource Monitor': null,
+                'Web Performance Monitor': null,
+                'Patch Manager': null,
+                'Serv-U Managed File Transfer Server': null,
+                'Web Help Desk': null,
+                'DameWare Remote Support': null,
+                'Dameware Mini Remote Control': null,
+                'Mobile Admin': null,
+                'Database Performance Analyzer': null
+            },
+            limit: 50,
+            onAutocomplete: function (val) {
+
+            },
+            minLength: 1,
+        });
     });
+</script>
+<script>
+    function buscarModulo(modulo){
+        var dato = {
+            "modulo": modulo,
+            "modulo1": modulo
+        };
+        $.ajax({
+            data:  dato, //datos que se envian a traves de ajax
+            url:   'licencia.php', //archivo que recibe la peticion
+            type:  'POST', //método de envio
+            beforeSend: function () {
+                $("#resultado").html("Procesando, espere por favor...");
+            },
+            success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                $("#resultado").html(response);
+            }
+        });
+    }
 </script>
 <style>
     .dropdown-content{
@@ -101,13 +148,50 @@ if($dataBussines){
         margin: 0 0 0 0;
         vertical-align: middle;
     }
+    .buscar{
+        background-color: #7db557;
+        vertical-align: middle;
+    }
+    #btn-buscar, #btn-cerrar{
+        vertical-align: middle;
+        margin-top: 25%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .input-field input[type=text]:focus {
+        border-bottom: 1px solid #000;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    .input-field input[type=text]:focus + label {
+        color: #000;
+    }
 </style>
 
 <!--Menu de la pagina -->
 <?php include("../componentes/menu.php");?>
 
 <!--Cuerpo de la pagina -->
+<div class="container">
+    <div class="section">
+        <div class="col s12">
+            <form>
+                <div class="row buscar">
+                    <div class="col m1">
+                        <button type="button" id="btn-buscar" href="javascript:;" onclick="buscarModulo($('#text-buscar').val());return false;" class="btn-flat waves-effect"><i class="material-icons medium white-text">search</i></button>
+                    </div>
+                    <div class="input-field col m10">
+                        <input type="text" placeholder="Buscar" id="text-buscar" name="buscar" class="text-buscar" required>
+                    </div>
+                    <div class="col m1">
+                        <button type="reset" id="btn-cerrar" class="btn-flat waves-effect"><i class="material-icons medium white-text">close</i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
+        <div class="card s12 z-depth-5" id="resultado"></div>
+    </div>
+</div>
 
 <!--Pie de la pagina -->
 <?php include("../componentes/pie.php");?>

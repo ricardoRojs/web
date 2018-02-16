@@ -87,16 +87,6 @@ if($dataBussines){
 <?php include("../../componentes/menu.php");?>
 <!--Toda la modificacion -->
 
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container center">
-            <br>
-            <h2 class="header orange-text text-orange">Nuestros servicios</h2>
-        </div>
-    </div>
-    <div class="parallax"><img src="../../img/slider.jpg" alt="Unsplashed background img 1"></div>
-</div>
-
 <div class="container">
     <div class="section">
         <div class="row">

@@ -126,6 +126,28 @@ class Modulo{
     }
 
     /**
+     * Obtenemos información de las licencias
+     */
+    public function getLicencia($moduloFull){
+        $modulo = null;
+        $modelo = new Conexion();
+        $conexion = $modelo->getConexion();
+        $sql = "SELECT * FROM gis_modulos WHERE moduloFull=:moduloFull";
+        $statement = $conexion->prepare($sql);
+        $statement->bindParam(':moduloFull', $moduloFull);
+        $statement->execute();
+
+        if(!$statement){
+            return "No hay datos";
+        }else{
+            $filas = $statement->fetch(PDO::FETCH_ASSOC);
+            $modulo = $filas;
+            return $modulo;
+        }
+        mysqli_close($conexion);
+    }
+
+    /**
      * Obtenemos información de los clientes
      */
     public function getCliente($pais){
@@ -133,7 +155,7 @@ class Modulo{
         $modelo = new Conexion();
         $conexion = $modelo->getConexion();
 
-        $sql = "SELECT * FROM gis_clientes WHERE pais=:pais";
+        $sql = "SELECT * FROM gis_clientes WHERE pais=:pais ORDER BY tipo_cliente ASC";
         $statement = $conexion->prepare($sql);
         $statement->bindParam(':pais', $pais);
         $statement->execute();

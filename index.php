@@ -92,7 +92,7 @@
   <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
           <div class="container center">
-              <iframe allowfullscreen="" frameborder="0" height="390" src="banner/demo/index.html" width="570"></iframe>
+              <!--<iframe allowfullscreen="" frameborder="0" height="390" src="banner/demo/index.html" width="570"></iframe>-->
 
           </div>
       </div>

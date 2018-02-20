@@ -42,8 +42,8 @@
         </ul>
 
         <ul id='ser-servicio' class='dropdown-content'>
-            <li><a class='dropdown-button2 d' href='<?php echo $link->url("servicio");?>' data-activates='soporte-so' data-hover="hover" data-alignment="left">Soporte Solarwinds</a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='poliza-so' data-hover="hover" data-alignment="left">Poliza de Mantenimiento</a></li>
+            <li><a class='dropdown-button2 d' href='<?php echo $link->url("soporte-solarwinds");?>' data-activates='soporte-so' data-hover="hover" data-alignment="left">Soporte Solarwinds</a></li>
+            <li><a class='dropdown-button2 d' href='<?php echo $link->url("poliza-mantenimiento");?>' data-activates='poliza-so' data-hover="hover" data-alignment="left">Poliza de Mantenimiento</a></li>
         </ul>
 
         <ul id='nue-cliente' class='dropdown-content'>

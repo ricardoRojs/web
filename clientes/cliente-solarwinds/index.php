@@ -12,12 +12,12 @@ $id = 602;
 $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
-$nameFull;
+$nameFull = "Cliente Solarwinds";
 $marcaFull = "Clientes";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];
-    $nameFull = $dataBussines['nameFull'];
+    //$nameFull = $dataBussines['nameFull'];
 
 }
 ?>
@@ -70,11 +70,6 @@ if($dataBussines){
             );
 
         });
-        (function ($) {
-            $(function () {
-                $('.slider').slider();
-            });
-        })(jQuery);
     </script>
     <style>
         .dropdown-content{
@@ -103,7 +98,7 @@ if($dataBussines){
 <div class="container">
     <div class="section">
         <div class="row">
-<?php $clientes = $modulo->getCliente($_GET['pais']);
+<?php $clientes = $modulo->getCliente($_GET['pais'],"Solarwinds");
     $tipo = "";
     foreach ($clientes as $cli){
         if($cli['tipo_cliente'] != $tipo){

@@ -150,14 +150,15 @@ class Modulo{
     /**
      * Obtenemos información de los clientes
      */
-    public function getCliente($pais){
+    public function getCliente($pais,$marca){
         $modulo = null;
         $modelo = new Conexion();
         $conexion = $modelo->getConexion();
 
-        $sql = "SELECT * FROM gis_clientes WHERE pais=:pais ORDER BY tipo_cliente ASC";
+        $sql = "SELECT * FROM gis_clientes WHERE pais=:pais AND marca=:marca ORDER BY tipo_cliente ASC";
         $statement = $conexion->prepare($sql);
         $statement->bindParam(':pais', $pais);
+        $statement->bindParam(':marca', $marca);
         $statement->execute();
 
         while ($filas = $statement->fetch(PDO::FETCH_ASSOC)) {

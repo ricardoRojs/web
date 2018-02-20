@@ -13,7 +13,8 @@ class urlIndex{
             "solarwinds" => "productos/solarwinds/index.php",
             "iboss" => "productos/iboss/index.php",
             "varonis" => "prodcutos/varonis/index.php",
-            "servicio" => "servicios/soporte-solarwinds/",
+            "soporte-solarwinds" => "servicios/soporte-solarwinds/",
+            "poliza-mantenimiento" => "servicios/poliza-mantenimiento/",
             "cliente" => "clientes/",
             "img" => "img/",
             "contactar" => "contactar/",
@@ -36,8 +37,12 @@ class urlIndex{
                 $url = $ip.$urls['varonis'];
                 return $url;
                 break;
-            case "servicio":
-                $url = $ip.$urls['servicio'];
+            case "soporte-solarwinds":
+                $url = $ip.$urls['soporte-solarwinds'];
+                return $url;
+                break;
+            case "poliza-mantenimiento":
+                $url = $ip.$urls['poliza-mantenimiento'];
                 return $url;
                 break;
             case "cliente":

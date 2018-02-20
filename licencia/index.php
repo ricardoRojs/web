@@ -5,6 +5,7 @@ require_once ('../modelo/urlIndex.php');
 
 $modulo = new Modulo();
 $link = new urlIndex();
+
 $marcaFull = "Licencias";
 
 $id = 602;
@@ -13,7 +14,7 @@ $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
 $nameFull;
-$moduloFull = "Global Investment Solution S.A.C";
+//$moduloFull = "Global Investment Solution S.A.C";
 
 
 if($dataBussines){
@@ -32,7 +33,7 @@ if($dataBussines){
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
 
-    <title><?php echo $marcaFull." - ".$moduloFull;?></title>
+    <title><?php echo $marcaFull?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -158,13 +159,10 @@ if($dataBussines){
         padding-left: 10px;
         padding-right: 10px;
     }
-    .input-field input[type=text]:focus {
-        border-bottom: 1px solid #000;
-        box-shadow: 0 1px 0 0 #000;
+    .leyenda{
+        font-size: 10px;
     }
-    .input-field input[type=text]:focus + label {
-        color: #000;
-    }
+
 </style>
 
 <!--Menu de la pagina -->

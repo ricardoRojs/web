@@ -11,12 +11,12 @@ $id = 602;
 $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
-$nameFull;
+$nameFull = "Soporte Solarwinds";
 $marcaFull = "Servicios";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];
-    $nameFull = $dataBussines['nameFull'];
+    //$nameFull = $dataBussines['nameFull'];
 
 }
 ?>

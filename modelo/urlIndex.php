@@ -18,7 +18,8 @@ class urlIndex{
             "cliente" => "clientes/",
             "img" => "img/",
             "contactar" => "contactar/",
-            "licencia" => "licencia/"
+            "licencia" => "licencia/",
+            "pago" => "pago/"
         );
         switch ($link){
             case "inicio":
@@ -59,6 +60,10 @@ class urlIndex{
                 break;
             case "licencia":
                 $url = $ip.$urls['licencia'];
+                return $url;
+                break;
+            case "pago":
+                $url = $ip.$urls['pago'];
                 return $url;
                 break;
             default:

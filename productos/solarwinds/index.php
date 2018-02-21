@@ -67,114 +67,158 @@
     <title><?php echo $marcaFull." - ".$moduloFull;?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+
+    <!--Diceño-->
+    <script type="text/javascript" src="../../js/jquery.scrollbox.min.js">
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.parallax').parallax();
+            $('.modal').modal();
+            $('.button-collapse').sideNav();
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+            });
+            $('.dropdown-button2').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: ($('.dropdown-content').width()),
+                    // Spacing from edge
+                    belowOrigin: false, // Displays dropdown below the button
+                    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                }
+            );
+            $('.dropdown-button').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: 0,
+                    //gutter: ($('.dropdown-content').width()*3)/2.5 + 5,
+                    // Spacing from edge
+                    belowOrigin: true, // Displays dropdown below the button
+                    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                }
+            );
+            $('ul.tabs').tabs();
+
+            $('#key-fun').scrollbox({
+                switchItems: 1,
+                distance: 142
+            });
+        });
+
+        function back() {
+            $('#btn-back').click(function () {
+                $('#key-fun').trigger('backward');
+            });
+        }
+        function next() {
+            $('#btn-next').click(function () {
+                $('#key-fun').trigger('forward');
+            });
+        }
+
+    </script>
+    <style>
+        .dropdown-content{
+            overflow: visible !important;
+            width: 195px !important;
+        }
+        .material-icons, .icon-text {
+            vertical-align: middle;
+        }
+        .embed-container iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+        }
+        #download-btn{
+            margin: 5px
+        }
+        .dropdown-content li>a>i{
+            margin: 0 0 0 0;
+            vertical-align: middle;
+        }
+        .circles-list ol > li:before {
+            position: absolute;
+            top: -0.5em;
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            font-size: 1em;
+            left: -3.75em;
+            width: 2.25em;
+            height: 2.25em;
+            line-height: 2.25em;
+            text-align: center;
+            z-index: 9;
+            color: #ff9800;
+            border: 2px solid #ff9800;
+            border-radius: 50%;
+            content: counter(li-counter);
+            background-color: #eeeeee;
+            counter-increment: li-counter;
+        }
+        .circles-list ol {
+            list-style-type: none;
+            margin-left: 1.25em;
+            padding-left: 2.5em;
+            counter-reset: li-counter;
+            border-left: 1px solid #ff9800;
+            position: relative;
+        }
+        .circles-list ol > li {
+            position: relative;
+            margin-bottom: 2.125em;
+            clear: both;
+        }
+
+        #back, #next{
+            /*height: 400px;*/
+            /*margin-top: 200px;*/
+        }
+        .scroll-img {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            font-size: 0;
+        }
+        .scroll-img ul {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+        .scroll-img ul li {
+            display: inline-block;
+            /*margin: 10px 0 10px 10px;*/
+        }
+        #key-fun.scroll-img ul {
+            width: 1500px;
+        }
+        #imagen{
+            width: 60%;
+        }
+
+    </style>
 
 </head>
 
 <body>
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../js/materialize.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.parallax').parallax();
-        $('.modal').modal();
-        $('.button-collapse').sideNav();
-        $('.carousel.carousel-slider').carousel({
-            fullWidth: true,
-        });
-        $('.dropdown-button2').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
-                gutter: ($('.dropdown-content').width()),
-                // Spacing from edge
-                belowOrigin: false, // Displays dropdown below the button
-                alignment: 'left' // Displays dropdown with edge aligned to the left of button
-            }
-        );
-        $('.dropdown-button').dropdown({
-                inDuration: 300,
-                outDuration: 225,
-                constrain_width: false, // Does not change width of dropdown to that of the activator
-                hover: true, // Activate on hover
-                gutter: 0,
-                //gutter: ($('.dropdown-content').width()*3)/2.5 + 5,
-                // Spacing from edge
-                belowOrigin: true, // Displays dropdown below the button
-                alignment: 'left' // Displays dropdown with edge aligned to the left of button
-            }
-        );
-        $('ul.tabs').tabs();
-    });
-    (function ($) {
-        $(function () {
-            $('.slider').slider();
-        });
-    })(jQuery);
-</script>
-<style>
-    .dropdown-content{
-        overflow: visible !important;
-        width: 195px !important;
-    }
-    .material-icons, .icon-text {
-        vertical-align: middle;
-    }
-    .embed-container iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 50%;
-        height: 50%;
-    }
-    #download-btn{
-        margin: 5px
-    }
-    .dropdown-content li>a>i{
-        margin: 0 0 0 0;
-        vertical-align: middle;
-    }
-    .circles-list ol > li:before {
-        position: absolute;
-        top: -0.5em;
-        font-family: "Roboto", sans-serif;
-        font-weight: 600;
-        font-size: 1em;
-        left: -3.75em;
-        width: 2.25em;
-        height: 2.25em;
-        line-height: 2.25em;
-        text-align: center;
-        z-index: 9;
-        color: #ff9800;
-        border: 2px solid #ff9800;
-        border-radius: 50%;
-        content: counter(li-counter);
-        background-color: #eeeeee;
-        counter-increment: li-counter;
-    }
-    .circles-list ol {
-        list-style-type: none;
-        margin-left: 1.25em;
-        padding-left: 2.5em;
-        counter-reset: li-counter;
-        border-left: 1px solid #ff9800;
-        position: relative;
-    }
-    .circles-list ol > li {
-        position: relative;
-        margin-bottom: 2.125em;
-        clear: both;
-    }
-</style>
-      
+
   <!--Toda la modificacion -->
   <?php include("../../componentes/menu.php");?>
   <!--Toda la modificacion -->
 
 
-              <div class="container center">
+        <div class="container center">
                   <h2 class="header center orange-text text-orange"><?= $moduloFull?></h2>
                   <div class="row">
                       <div class="col m12">
@@ -207,7 +251,7 @@
               <div class="row">
                   <div class="col s12">
                       <ul class="tabs grey darken-2">
-                          <li class="tab"><a href="#test1" class="active orange-text">Sobre "<?php echo $moduloShort;?>"</a></li>
+                          <li class="tab"><a href="#test1" class="active orange-text">Sobre <?php echo $moduloShort;?></a></li>
                           <li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>
                           <li class="tab"><a href="#test3" class="orange-text">Requerimiento</a></li>
                           <li class="tab"><a href="#test4" class="orange-text">Hoja de datos</a></li>
@@ -340,13 +384,23 @@
               <div class="container">
                   <div class="section">
                       <div class="row">
-                          <div class="col s12 m3">
+                          <div id="back" class="col s5 m1">
+                              <a id="btn-back" onclick="back();return false;" href="#" class="left waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_left</i></a>
+                          </div>
+                          <div class="col s12 m10">
+
+                              <div id="key-fun" class="scroll-img">
+                                  <ul>
+                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=234" target="_blank"><img id="imagen" src="npm/npm-1.png"></a></li>
+                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=485" target="_blank"><img id="imagen" src="npm/npm-2.png"></a></li>
+                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=511" target="_blank"><img id="imagen" src="npm/npm-3.png"></a></li>
+                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=725" target="_blank"><img id="imagen" src="npm/npm-4.png"></a></li>
+                                  </ul>
+                              </div>
 
                           </div>
-                          <div class="col s12 m6">
-                          </div>
-                          <div class="col s12 m3">
-
+                          <div id="next" class="col s5 m1">
+                              <a id="btn-next" onclick="next();return false;" href="#" class="right waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_right</i></a>
                           </div>
                       </div>
                   </div>

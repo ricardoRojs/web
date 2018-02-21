@@ -83,16 +83,31 @@ if($dataBussines){
 
 <body>
 
-<!--Toda la modificacion -->
+<!--Estructura del Menu -->
 <?php include("../../componentes/menu.php");?>
+
+<!--Estructura del Body -->
+<?php
+if (isset($_GET['url'])){?>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h2 class="header center orange-text text-orange">falta configurar.....</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+}else{?>
 <!--Toda la modificacion -->
 
 <div class="container">
     <div class="section">
         <div class="row">
             <div class="col s12 center">
-                <!--<h2 class="header center orange-text text-orange"><?php //echo $nameShort;?></h2>-->
-                <img src="../../img/solar-logo.png">
+                <h2 class="header center orange-text text-orange"><?=$nameFull;?></h2>
+                <!--<img src="../../img/solar-logo.png">-->
             </div>
             <div class="col s12">
                 <br>
@@ -106,7 +121,7 @@ if($dataBussines){
                                     de SolarWinds son brindados en cada país por el Partner que tiene la marca.</p>
                             </div>
                             <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Instalacion de Modulos</a>
+                                <a href="index.php?url=instalacion-modulos">Ir a Instalacion de Modulos</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +134,7 @@ if($dataBussines){
                                     contamos con personal con experiencia y certificado por la marca</p>
                             </div>
                             <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Optimización de Modulos</a>
+                                <a href="index.php?url=optimizacion-modulos">Ir a Optimización de Modulos</a>
                             </div>
                         </div>
                     </div>
@@ -131,7 +146,7 @@ if($dataBussines){
                                     indicadores de su infraestructura TI</p>
                             </div>
                             <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Monitoreo Gestionado</a>
+                                <a href="index.php?url=monitoreo-gestionado">Ir a Monitoreo Gestionado</a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +158,7 @@ if($dataBussines){
                                     mantenimiento preventivo y correctivo sobre la solución</p>
                             </div>
                             <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Soporte Local</a>
+                                <a href="index.php?url=soporte-local">Ir a Soporte Local</a>
                             </div>
                         </div>
                     </div>
@@ -152,6 +167,8 @@ if($dataBussines){
         </div>
     </div>
 </div>
+
+<?php }?>
 
 <?php include("../../componentes/pie.php");?>
 

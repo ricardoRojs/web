@@ -23,6 +23,7 @@ if($dataBussines){
 <!DOCTYPE html>
 <html>
 <head>
+    <meta lang="es">
     <link rel="icon" href="../../img/favicon.png" type="image/icon"/>
     <meta charset="utf-8"/>
     <!--Import Google Icon Font-->
@@ -91,63 +92,58 @@ if($dataBussines){
     <div class="section">
         <div class="row">
             <div class="col s12 center">
-                <!--<h2 class="header center orange-text text-orange"><?php //echo $nameShort;?></h2>-->
-                <img src="../../img/solar-logo.png">
-            </div>
-            <div class="col s12">
+                <h2 class="header center orange-text text-orange"><?=$nameFull?></h2>
+
                 <br>
-                <!--<div class="row">
-                    <div class="col s12 m6">
-                        <div class="card blue-grey darken-1 z-depth-5">
-                            <div class="card-content white-text">
-                                <span class="card-title"><i class="small material-icons medium right">widgets</i>Instalacion de Modulos</span>
-                                <br>
-                                <p>Los servicios de instalación y capacitación de uso de los productos
-                                    de SolarWinds son brindados en cada país por el Partner que tiene la marca.</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Instalacion de Modulos</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card blue-grey darken-1 z-depth-5">
-                            <div class="card-content white-text">
-                                <span class="card-title"><i class="small material-icons medium right">developer_board</i>Optimizacion de Modulos</span>
-                                <p>Somos el único Partner autorizado de SolarWinds en Perú para brindar
-                                    servicios de soporte técnico y capacitación sobre sus productos y
-                                    contamos con personal con experiencia y certificado por la marca</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Optimización de Modulos</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card blue-grey darken-1 z-depth-5">
-                            <div class="card-content white-text">
-                                <span class="card-title"><i class="small material-icons medium right">desktop_windows</i>Monitoreo Gestionado</span>
-                                <p>Le permitirán recibir información en línea del desempeño de los
-                                    indicadores de su infraestructura TI</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Monitoreo Gestionado</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card blue-grey darken-1 z-depth-5">
-                            <div class="card-content white-text">
-                                <span class="card-title"><i class="small material-icons medium right">location_on</i>Soporte Local</span>
-                                <p>soporte local incluye soporte técnico niveles 1, 2 y 3 para el
-                                    mantenimiento preventivo y correctivo sobre la solución</p>
-                            </div>
-                            <div class="card-action">
-                                <a href="instalacion-modulos/index.php">Ir a Soporte Local</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+            </div>
+            <h5 class="col s12">
+                <h5>Actualizaciones durante la vigencia del licenciamiento</h5>
+
+                <p>Garantizamos a nuestros clientes las oportunas actualizaciones en sus equipos con la tecnología de todas las marcas que representamos.</p>
+
+
+
+                <h5>Soporte Técnico de Seguridad</h5>
+
+                <p><b>Soporte Esencial - Pack 5x8</b></p>
+                <ul>
+                    <li><i class="material-icons orange-text text-orange">check</i>Horario Lunes - Vienes 8:00 AM - 5:00 PM</li>
+                    <li><i class="material-icons orange-text text-orange">check</i>Comunicación vía email y teléfono</li>
+                </ul>
+                <p><b>Soporte Premium - Pack 7x24</b></p>
+                <ul>
+                    <li><i class="material-icons orange-text text-orange">check</i>Horario Lunes - Domingo 0:00 AM - 11:59 PM</li>
+                    <li><i class="material-icons orange-text text-orange">check</i>Comunicación vía email y teléfono</li>
+                </ul>
+
+                <br>
+                <h4 class="center">Servicios Adicionales de GIS S.A.C. con Poliza de Soporte Local</h4>
+
+                <h5>Capacitación de uso del producto</h5>
+                <p>Permite a los profesionales de la empresa cliente, tener una capacitación avanzada sobre el uso de nuestro producto.</p>
+
+                <h5>Gestión de Soporte Preventivo</h5>
+                <p>Cada 6 meses nuestros profesionales de soporte local pueden acudir a su centro de cómputo para evaluar el funcionamiento del producto.</p>
+
+                <h5>Gestión de Incidencias</h5>
+                <p>Los tipos de incidencia serán de los niveles siguientes:</p>
+                <ul>
+                    <li><i class="material-icons orange-text text-orange">check</i><b>NIVEL 1:</b> Incidencias que pueden ser solucionadas por los profesionales del <b>CLIENTE</b> que han sido previamente capacitados</li>
+                    <li><i class="material-icons orange-text text-orange">check</i><b>NIVEL 2:</b> Incidencias que los profesionales del <b>CLIENTE</b> reportan a nuestro soporte local y son solucionados remota o presencialmente por los profesionales de <b>GIS S.A.C.</b></li>
+                    <li><i class="material-icons orange-text text-orange">check</i><b>NIVEL 3:</b> Incidencias que los profesionales de <b>GIS S.A.C.</b> reportan a las marca respectivas y son solucionadas de inmediato por ser incidencias conocidas, o son solucionadas accediendo remotamente al equipo o son derivadas para su solución al área de desarrollo de la marca.</li>
+                </ul>
+                <p>Si por una incidencia los profesionales del <b>CLIENTE</b> no logran comunicación para ser atendidos por un profesional del <b>NIVEL 2</b> podrán comunicarse directamente con el soporte de las marcas.</p>
+
+                <h5>Gestión de Soporte presencial</h5>
+                <p>Contamos con un staf nacional e internacional de ingenieros especializados y certificados por las marcas, para brindar el soporte que sea requerido por el cliente.</p>
+
+                <h5>Gestión de Soporte Remoto vía Internet</h5>
+                <p>Permite a nuestro equipo de soporte técnico asistir vía internet a los responsables de la administración del producto adquirido.</p>
+                <br>
+                <h4 class="center">Servicios Adicionales de GIS S.A.C. sin Poliza de Soporte Local</h4>
+
+                <p>Los servicios adicionales requeridos a GIS S.A.C. sin Póliza de Soporte local tienen un costo por hora a tratar. Para
+                    <a href="https://web.gis-sac.com/contactar/">más información contactenos</a></p>
             </div>
         </div>
     </div>

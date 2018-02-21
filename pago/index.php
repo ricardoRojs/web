@@ -6,7 +6,7 @@ require_once ('../modelo/urlIndex.php');
 $modulo = new Modulo();
 $link = new urlIndex();
 
-$marcaFull = "Licencias";
+$marcaFull = "Pagos";
 
 $id = 602;
 
@@ -75,40 +75,11 @@ if($dataBussines){
                 alignment: 'left' // Displays dropdown with edge aligned to the left of button
             }
         );
-        $('input.text-buscar').autocomplete({
-            data: {
-                'Network Performance Monitor': null,
-                'NetFlow Traffic Analyzer': null,
-                'Network Configuration Manager': null,
-                'IP Address Manager': null,
-                'User Device Tracker': null,
-                'VoIP & Network Quality Manager': null,
-                'Log & Event Manager': null,
-                'Engineers Toolset': null,
-                'Network Topology Mapper': null,
-                'Kiwi CatTools': null,
-                'Kiwi Syslog Server': null,
-                'Server & Application Monitor': null,
-                'Virtualization Manager': null,
-                'Storage Resource Monitor': null,
-                'Web Performance Monitor': null,
-                'Patch Manager': null,
-                'Serv-U Managed File Transfer Server': null,
-                'Web Help Desk': null,
-                'DameWare Remote Support': null,
-                'Dameware Mini Remote Control': null,
-                'Mobile Admin': null,
-                'Database Performance Analyzer': null
-            },
-            limit: 50,
-            onAutocomplete: function (val) {
 
-            },
-            minLength: 1,
-        });
     });
 </script>
 <script>
+    //modelo para ajax
     function buscarModulo(modulo){
         var dato = {
             "modulo": modulo
@@ -134,32 +105,12 @@ if($dataBussines){
     .material-icons, .icon-text {
         vertical-align: middle;
     }
-    .embed-container iframe {
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 50%;
-        height: 50%;
-    }
     #download-btn{
         margin: 5px
     }
     .dropdown-content li>a>i{
         margin: 0 0 0 0;
         vertical-align: middle;
-    }
-    .buscar{
-        background-color: #7db557;
-        vertical-align: middle;
-    }
-    #btn-buscar, #btn-cerrar{
-        vertical-align: middle;
-        margin-top: 25%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .leyenda{
-        font-size: 10px;
     }
 
 </style>
@@ -172,6 +123,16 @@ if($dataBussines){
     <div class="section">
         <div class="col s12">
             <form>
+                <div class="input-field">
+                    <input id="n-tarjeta" name="n-tarjeta" type="text" class="input-field" maxlength="16" data-length="16">
+                    <label for="n-tarjeta">Nro. Tarjeta</label>
+                </div>
+                <div class="input-field">
+                    <input id="ccv" name="ccv" type="text" class="input-field" maxlength="3" data-length="3">
+                    <label for="ccv">CCV</label>
+                </div>
+            </form>
+            <!--<form>
                 <div class="row buscar">
                     <div class="col m1">
                         <button type="button" id="btn-buscar" href="javascript:;" onclick="buscarModulo($('#text-buscar').val());return false;" class="btn-flat waves-effect"><i class="material-icons medium white-text">search</i></button>
@@ -183,7 +144,7 @@ if($dataBussines){
                         <button type="reset" id="btn-cerrar" class="btn-flat waves-effect"><i class="material-icons medium white-text">close</i></button>
                     </div>
                 </div>
-            </form>
+            </form>-->
         </div>
 
         <div class="card s12 z-depth-5" id="resultado"></div>

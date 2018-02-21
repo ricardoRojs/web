@@ -39,6 +39,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
+    <!--Diceño-->
+    <script type="text/javascript" src="js/jquery.scrollbox.min.js"></script>
+
 
     <script>
         $(document).ready(function(){
@@ -70,7 +73,22 @@
                     alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
+            $('#key-fun').scrollbox({
+                switchItems: 1,
+                direction: 'h',
+                distance: 2
+            });
         });
+        function back() {
+            $('#btn-back').click(function () {
+                $('#key-fun').trigger('backward');
+            });
+        }
+        function next() {
+            $('#btn-next').click(function () {
+                $('#key-fun').trigger('forward');
+            });
+        }
     </script>
     <style>
         .dropdown-content{
@@ -79,6 +97,27 @@
         }
         .material-icons, .icon-text {
             vertical-align: middle;
+        }
+        .scroll-img {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            font-size: 0;
+        }
+        .scroll-img ul {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+        .scroll-img ul li {
+            display: inline-block;
+            /*margin: 10px 0 10px 10px;*/
+        }
+        #key-fun.scroll-img ul {
+            /*width: 1500px;*/
+        }
+        #imagen{
+            width: 85%;
         }
     </style>
 </head>
@@ -89,11 +128,31 @@
   <?php include("componentes/menu.php");?>
   <!--Toda la modificacion -->
            
-  <div id="index-banner" class="parallax-container">
+  <div class="parallax-container">
       <div class="section no-pad-bot">
           <div class="container center">
               <!--<iframe allowfullscreen="" frameborder="0" height="390" src="banner/demo/index.html" width="570"></iframe>-->
+              <div class="section">
+                <br>
+                <div class="row">
+                  <div id="back" class="col s5 m1">
+                      <a id="btn-back" onclick="back();return false;" href="#" class="left waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_left</i></a>
+                  </div>
+                  <div class="col s12 m10">
 
+                      <div id="key-fun" class="scroll-img">
+                          <ul>
+                              <li><a href="#" ><img id="imagen" src="img/marcas/solarwinds-4.png"></a></li>
+                              <li><a href="#" ><img id="imagen" src="img/marcas/iboss-3.png"></a></li>
+                              <li><a href="#" ><img id="imagen" src="img/marcas/Varonis-3.png"></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div id="next" class="col s5 m1">
+                      <a id="btn-next" onclick="next();return false;" href="#" class="right waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_right</i></a>
+                  </div>
+              </div>
+              </div>
           </div>
       </div>
     <div class="parallax"><img src="img/slider.jpg" alt="Unsplashed background img 1"></div>

@@ -16,9 +16,9 @@ if (isset($_POST['producto']) && isset($_POST['motivo']) && isset($_POST['empres
         require_once('../modelo/Modulo.php');
         require_once('../modelo/Correo.php');
 
-        require_once('../modelo/libreria/PHPMailer.php');
-        require_once('../modelo/libreria/SMTP.php');
-        require_once('../modelo/libreria/Exception.php');
+        require_once('../modelo/libreria/PHPMailer/src/PHPMailer.php');
+        require_once('../modelo/libreria/PHPMailer/src/SMTP.php');
+        require_once('../modelo/libreria/PHPMailer/src/Exception.php');
 
         $modulo = new Modulo();
         $correo = new Correo();
@@ -55,7 +55,7 @@ if (isset($_POST['producto']) && isset($_POST['motivo']) && isset($_POST['empres
                     "<p class='center-align'>Problemas al enviar el los datos... (BD ---> Problema)</p>";
         }else {
                 echo "<p class='center-align'><i class='material-icons medium orange-text'>compare_arrows</i></p>" .
-                    "<p class='center-align'>Problemas al enviar el los datos...</p>";
+                    "<p class='center-align'>Problemas al enviar el los datos... (SMTP ---> Problema) & (BD ---> Problema)</p>";
         }
     }
 }

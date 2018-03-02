@@ -5,7 +5,7 @@
 
     }
     nav .nav-background{
-        height: 350px;
+        height: 300px;
         top: 0;
         opacity: .3;
         bottom: 0;
@@ -22,7 +22,7 @@
     }
     #titulo{
         position: absolute;
-        top: 25%;
+        top: 20%;
         right: 1%;
         left: 1%;
     }

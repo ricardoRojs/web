@@ -1,7 +1,7 @@
 <?php
-require_once('libreria/PHPMailer.php');
-require_once('libreria/SMTP.php');
-require_once('libreria/Exception.php');
+require_once('libreria/PHPMailer/src/PHPMailer.php');
+require_once('libreria/PHPMailer/src/SMTP.php');
+require_once('libreria/PHPMailer/src/Exception.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -11,6 +11,8 @@ class Correo{
 
     function enviarCorreo($datos){
         $mail = new PHPMailer(true);                                  // Passing `true` enables exceptions
+        $mail->CharSet = 'utf-8';
+        $mail->setLanguage('es', 'libreria/PHPMailer/language/phpmailer.lang-es.php');
         try {
             //Server settings
             $mail->SMTPDebug = 2;                                               // Enable verbose debug output
@@ -23,7 +25,7 @@ class Correo{
             $mail->Port = 465;                                                  // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('nuevos-clientes@gis-sac.com', 'Nuevos Clientes');
+            $mail->setFrom('contactos@gis-sac.com', 'Nuevos Clientes');
             $mail->addAddress('erequelme@gis-sac.com', 'Eduardo');   // Add a recipient
             //$mail->addAddress('ellen@example.com');                              // Name is optional
             //$mail->addReplyTo('info@example.com', 'Information');
@@ -36,73 +38,124 @@ class Correo{
 
             //Content
             $mail->isHTML(true);                                             // Set email format to HTML
-            $mail->Subject = $datos['motivo']." ".$datos['producto'];               // motivo.producto
-
-            $men =
-                "<table style='width: 100% !important; border-spacing:0;'>".
+            $mail->Subject = $datos['motivo'].' '.$datos['producto'];               // motivo.producto
+            
+            $mensaje =
+            "<table style='width: 100% !important; border-spacing:0;'>".
                 "<thead></thead>".
                 "<tbody>".
-                "<tr>".
-                "<td align='center'>".
-                "<table width='70%'>".
-                "<thead></thead>".
-                "<tbody align='left'>".
-                "<tr>".
-                "<td colspan='2'>".
-                "<nav style='background-color: #2196f3; width: 100%;'>".
-                "<div style='height: 350px; top: 0;  opacity: .3; bottom: 0; -webkit-transform: none; transform: none; background-repeat: repeat; background-image: url(\"http://web.gis-sac.com/img/new.png\") !important;'></div>".
-                "<div style='font-family: \"Roboto\", sans-serif; position: absolute; left: 1%; right: 1%; top: 160px; color: #fff;' align='center'>".
-                "<h2 style='font-weight: 400; font-size: 3.56rem;'>Global Investment Solutions S.A.C</h2>".
-                "</div>".
-                "</nav>".
-                "</td>".
-                "</tr>".
-                "<tr>".
-                "<td width='40%' align='right' style='padding\: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Empresa</b></p></td>".
-                "<td width='60%' ><p style='font-family: \"Roboto\", sans-serif'>".$datos['empresa']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Nombre</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['nombre']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Apellido</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['apellido']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Correo</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['correo']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Celular</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['celular']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Pais</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['pais']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Ciudad</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['ciudad']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td align='right' style='padding: 10px'><p style='font-family: \"Roboto\", sans-serif'><b>Mensaje</b></p></td>".
-                "<td><p style='font-family: \"Roboto\", sans-serif'>".$datos['mensaje']."</p></td>".
-                "</tr>".
-                "<tr>".
-                "<td colspan='2' style='background: #5a5a5a; margin-top: 10px;'>".
-                "<div align='center' style='font-family: \"Roboto\", sans-serif; font-size: 12px;'>".
-                "<p style='display: block; color: white;' align='center'>Global Investment Solutions S.A.C 2018, Surco, Lima, Peru</p>".
-                "</div>".
-                "</td>".
-                "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='left' width='55%' style='background-color: #009688 !important;'>".
+                            "<div>".
+                                "<img src='https://www.gis-sac.com/img/logo-gis2.png' width='150px' style='margin: 10px;'>".
+                            "</div>".
+                        "</td>".
+                        "<td align='left' width='15%' style='background-color: #009688 !important;'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px;'>Global Investment Solutions S.A.C</p>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px;'>R.U.C. 20519193516</p>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td colspan='2' align='center'>".
+                            "<h4 style='font-family: \"Roboto\", sans-serif; font-size: 1.64rem;'>Nueva oportunidad de Venta</h4>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Empresa</p>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['empresa']."</p>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Nombre</p>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['nombre']."</p>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Apellido</p><br>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['apellido']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Correo</p><br>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['correo']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Celular</p><br>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['celular']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>País</p><br>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['pais']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' width='55%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>Ciudad</p><br>".
+                        "</td>".
+                        "<td align='center' width='15%'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px; text-align: left'>".$datos['ciudad']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td align='center' colspan='2'>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px;'>Mensasje</p><br>".
+                            "<p style='font-family: \"Roboto\", sans-serif; font-size: 15px;'>".$datos['mensaje']."</p><br>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
+
+                    "<tr>".
+                        "<td width='15%'></td>".
+                        "<td colspan='2' align=\'center\' style='background: #5a5a5a;'>".
+                            "<div align='center' style='font-family: \"Roboto\", sans-serif; font-size: 12px;'>".
+                                "<p style='display: block; color: white; margin: 30px' align='center'>Global Investment Solutions S.A.C - 2018, Surco, Lima, Perú</p>".
+                            "</div>".
+                        "</td>".
+                        "<td width='15%'></td>".
+                    "</tr>".
                 "</tbody>".
-                "</table>".
-                "</td>".
-                "</tr>".
-                "</tbody>".
-                "</table>";
-            $mail->Body    = $men;
+            "</table>";
+
+            $mail->Body = $mensaje;
             //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
             //$mail->send();
             if($mail->send()){

@@ -218,7 +218,7 @@
   <!--Toda la modificacion -->
 
 
-        <div class="container center">
+        <!--<div class="container center">
                   <h2 class="header center orange-text text-orange"><?= $moduloFull?></h2>
                   <div class="row">
                       <div class="col m12">
@@ -241,9 +241,9 @@
                           <br>
                           <br>
                           <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="500px" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-                      </div>-->
+                      </div>
                   </div>
-              </div>
+              </div>-->
 
 
       <div class="container">

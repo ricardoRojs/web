@@ -1,0 +1,11 @@
+[19-Feb-2018 21:30:08 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 125
+[19-Feb-2018 21:30:15 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 125
+[19-Feb-2018 21:37:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[19-Feb-2018 21:39:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[19-Feb-2018 21:39:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[19-Feb-2018 21:39:13 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[20-Feb-2018 21:52:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[20-Feb-2018 21:53:58 UTC] PHP Warning:  Missing argument 2 for Modulo::getCliente(), called in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 106 and defined in /home/gissac/web.gis-sac.com/modelo/Modulo.php on line 153
+[20-Feb-2018 21:53:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108
+[20-Feb-2018 21:54:03 UTC] PHP Warning:  Missing argument 2 for Modulo::getCliente(), called in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 106 and defined in /home/gissac/web.gis-sac.com/modelo/Modulo.php on line 153
+[20-Feb-2018 21:54:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/gissac/web.gis-sac.com/clientes/cliente-solarwinds/index.php on line 108

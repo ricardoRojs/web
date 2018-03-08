@@ -12,12 +12,12 @@ $id = 602;
 $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
-$nameFull = "Cliente Solarwinds";
+$nameFull;
 $marcaFull = "Clientes";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];
-    //$nameFull = $dataBussines['nameFull'];
+    $nameFull = $dataBussines['nameFull'];
 
 }
 ?>
@@ -70,6 +70,11 @@ if($dataBussines){
             );
 
         });
+        (function ($) {
+            $(function () {
+                $('.slider').slider();
+            });
+        })(jQuery);
     </script>
     <style>
         .dropdown-content{
@@ -117,7 +122,7 @@ if($dataBussines){
                     <div class="col s12 m4">
                         <div class="card z-depth-4">
                             <div class="card-image">
-                                <a href="<?= $cli['url-cliente']?>" target="_blank"><img alt="<?= $cli['nombre']?>" src="<?php echo $link->url("cliente")."cliente-solarwinds/img/peru/".$cli['img'];?>"></a>
+                                <a href="<?= $cli['url-cliente']?>" target="_blank"><img alt="<?= $cli['nombre']?>" src="<?php echo $link->url("cliente")."cliente-solarwinds/img/".$cli['pais']."/".$cli['img'];?>"></a>
                             </div>
                         </div>
                     </div>

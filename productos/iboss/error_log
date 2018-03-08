@@ -1,0 +1,6 @@
+[23-Feb-2018 23:11:09 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gissac_customers.gis_iboss' doesn't exist in /home/gissac/web.gis-sac.com/modelo/Modulo.php:45
+Stack trace:
+#0 /home/gissac/web.gis-sac.com/modelo/Modulo.php(45): PDOStatement->execute()
+#1 /home/gissac/web.gis-sac.com/productos/iboss/index.php(10): Modulo->getIboss('23')
+#2 {main}
+  thrown in /home/gissac/web.gis-sac.com/modelo/Modulo.php on line 45

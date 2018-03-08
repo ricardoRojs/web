@@ -12,12 +12,12 @@ $id = 602;
 $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
-$nameFull = "Cliente Iboss";
+$nameFull;
 $marcaFull = "Clientes";
 
 if($dataBussines){
     $nameShort = $dataBussines['nameShort'];
-    //$nameFull = $dataBussines['nameFull'];
+    $nameFull = $dataBussines['nameFull'];
 
 }
 ?>
@@ -70,11 +70,6 @@ if($dataBussines){
             );
 
         });
-        (function ($) {
-            $(function () {
-                $('.slider').slider();
-            });
-        })(jQuery);
     </script>
     <style>
         .dropdown-content{
@@ -147,7 +142,6 @@ if($dataBussines){
                         <div class="col s12 m4">
                             <div class="card blue-grey darken-1">
                                 <div class="card-image">
-                                    <!--<a href="paises/peru.php" class="z-depth-5 waves-effect"><img src="img/peru.png"></a>-->
                                     <a href="index.php?pais=peru" class="z-depth-5 waves-effect"><img src="img/peru.png"></a>
                                     <span class="card-title">Perú</span>
                                 </div>

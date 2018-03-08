@@ -4,10 +4,10 @@ class urlIndex{
     public function url($link){
 
         // para pruebas....
-        $sub = "web/";
+        //$sub = "web/";
 
         // eliminar $sub al momento de subir ejemplo ("http://192.168.1.10") o ("http://dominio.com").
-        $ip = "http://192.168.1.10/".$sub;
+        $ip = "https://www.gis-sac.com/";
 
         $urls = array(
             "solarwinds" => "productos/solarwinds/index.php",

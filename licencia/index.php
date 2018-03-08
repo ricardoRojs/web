@@ -5,7 +5,6 @@ require_once ('../modelo/urlIndex.php');
 
 $modulo = new Modulo();
 $link = new urlIndex();
-
 $marcaFull = "Licencias";
 
 $id = 602;
@@ -14,7 +13,7 @@ $dataBussines = $modulo->getBussines($id);
 
 $nameShort;
 $nameFull;
-//$moduloFull = "Global Investment Solution S.A.C";
+$moduloFull = "Global Investment Solution S.A.C";
 
 
 if($dataBussines){
@@ -33,7 +32,7 @@ if($dataBussines){
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
 
-    <title><?php echo $marcaFull?></title>
+    <title><?php echo $marcaFull." - ".$moduloFull;?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -111,7 +110,8 @@ if($dataBussines){
 <script>
     function buscarModulo(modulo){
         var dato = {
-            "modulo": modulo
+            "modulo": modulo,
+            "modulo1": modulo
         };
         $.ajax({
             data:  dato, //datos que se envian a traves de ajax
@@ -158,10 +158,13 @@ if($dataBussines){
         padding-left: 10px;
         padding-right: 10px;
     }
-    .leyenda{
-        font-size: 10px;
+    .input-field input[type=text]:focus {
+        border-bottom: 1px solid #000;
+        box-shadow: 0 1px 0 0 #000;
     }
-
+    .input-field input[type=text]:focus + label {
+        color: #000;
+    }
 </style>
 
 <!--Menu de la pagina -->

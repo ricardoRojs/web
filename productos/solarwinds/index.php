@@ -218,7 +218,7 @@
   <!--Toda la modificacion -->
 
 
-        <!--<div class="container center">
+        <div class="container center">
                   <h2 class="header center orange-text text-orange"><?= $moduloFull?></h2>
                   <div class="row">
                       <div class="col m12">
@@ -229,7 +229,7 @@
                               <br>
                               <p>
                                   <b>Precio referencial desde: S/. <?= $moduloPrecio?></b>
-                                  <i class="material-icons small">trending_flat</i> <a href="<?=$link->url("contactar")?>"><i class="material-icons medium grey-text">assignment</i></a>
+                                  <i class="material-icons small">trending_flat</i> <a class="pulse btn green tooltipped" data-position="right" data-delay="50" data-tooltip="Cotizar <?= $moduloShort?>" href="<?=$link->url("contactar")?>"><i class="material-icons medium white-text">assignment</i></a>
                               </p>
                               <br>
 
@@ -241,9 +241,9 @@
                           <br>
                           <br>
                           <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="500px" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-                      </div>
+                      </div>-->
                   </div>
-              </div>-->
+              </div>
 
 
       <div class="container">
@@ -252,9 +252,9 @@
                   <div class="col s12">
                       <ul class="tabs grey darken-2">
                           <li class="tab"><a href="#test1" class="active orange-text">Sobre <?php echo $moduloShort;?></a></li>
-                          <li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>
+                          <!--<li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>-->
                           <li class="tab"><a href="#test3" class="orange-text">Requerimiento</a></li>
-                          <li class="tab"><a href="#test4" class="orange-text">Hoja de datos</a></li>
+                          <!--<li class="tab"><a href="#test4" class="orange-text">Hoja de datos</a></li>-->
                       </ul>
                   </div>
                   <div id="test1" class="col s12">
@@ -291,7 +291,7 @@
                           <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="100%" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
                       </div>
                   </div>
-                  <div id="test2" class="col s12">
+                  <!--<div id="test2" class="col s12">
                       <div class="row">
 
                           <?php
@@ -319,7 +319,7 @@
                               </div>
                           <?php }?>
                       </div>
-                  </div>
+                  </div>-->
                   <div id="test3" class="col s12">
                       <!-------->
                       <table class="highlight">
@@ -370,16 +370,17 @@
                       <p><b>Nota: </b><?php echo $nota;?><a href="http://clientes.gis-sac.com">contáctenos</a></p>
                       <!-------->
                   </div>
-                  <div id="test4" class="col s12">
+                  <!--<div id="test4" class="col s12">
                       <div class="col s12 m12 center">
                           <br>
                           <iframe src="http://192.168.1.10/web/pdf/web/viewer.html?file=http://192.168.1.10/web/productos/solarwinds/npm/pdf/npm_datasheet.pdf" width="100%" height="600px"></iframe>
                       </div>
-                  </div>
+                  </div>-->
               </div>
           </div>
       </div>
-      <div class="parallax-container">
+      
+      <!--<div class="parallax-container">
           <div class="section no-pad-bot">
               <div class="container">
                   <div class="section">
@@ -408,7 +409,9 @@
           </div>
 
           <div class="parallax"><img src="../../img/dos.jpg" alt="Unsplashed background img 2"></div>
-      </div>
+      </div>-->
+      
+      
       <div class="container">
           <div class="section">
 

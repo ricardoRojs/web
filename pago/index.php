@@ -79,6 +79,7 @@ if($dataBussines){
                     alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 }
             );
+            
             //tarjeta visa
             $('#card-visa').click(function () {
                 $('input[id="card[cvv]"]').prop('maxlength',3);
@@ -93,6 +94,7 @@ if($dataBussines){
                 $('input[id="card[cvv]"]').prop('disabled',false);
                 $('input[id="card[exp_month]"]').prop('disabled',false);
                 $('input[id="card[exp_year]"]').prop('disabled',false);
+                
             });
             //tarjeta mastercard
             $('#card-master').click(function () {
@@ -229,7 +231,6 @@ if($dataBussines){
         #card-visa, #card-master, #card-american, #card-diners{
             opacity: 0.5;
         }
-
     </style>
 
 </head>
@@ -238,7 +239,7 @@ if($dataBussines){
 
 <!-- Configurando el checkout-->
 <script>
-    Culqi.publicKey = 'pk_test_z51Rh4rL0tBCM0KT';
+    Culqi.publicKey = 'pk_live_3BsgWxA8r9TgUkRO';
     Culqi.init();
 </script>
 
@@ -246,151 +247,10 @@ if($dataBussines){
 <?php include("../componentes/menu.php");?>
 
 <!--Cuerpo de la pagina -->
-<!--<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 m3"></div>
-            <div class="col s12 m6">
-                <form action="" method="POST" id="culqi-card-form">
-                    <div class="col s12 m12">
-                        <div class="input-field">
-                            <a type="button" id="card-visa" class="btn-flat col m3"><img src="img/visa.png" width="70%"></a>
-                            <a type="button" id="card-master" class="btn-flat col m3"><img src="img/mastercard.png" width="70%"></a>
-                            <a type="button" id="card-american" class="btn-flat col m3"><img src="img/amercan.png" width="70%"></a>
-                            <a type="button" id="card-diners" class="btn-flat col m3"><img src="img/diners-club.png" width="70%"></a>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="input-field">
-                        <div class=" input-field col s12 m10">
-                            <i class="material-icons prefix">attach_money</i>
-                            <input type="text" id="monto">
-                            <label for="monto">Monto en dolares</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s12 m10">
-                        <i class="material-icons prefix">perm_identity</i>
-                        <input class="input-field" type="text" size="50" data-culqi="card[name]" id="card[name]">
-                        <label for="card[name]">Nombre Completos</label>
-                    </div>
-                    <div class="input-field col s12 m10">
-                        <i class="material-icons prefix">mail</i>
-                        <input class="input-field" type="text" size="50" data-culqi="card[email]" id="card[email]">
-                        <label for="card[email]">Correo Electrónico</label>
-                    </div>
-                    <div class="input-field col s12 m10">
-                        <i class="material-icons prefix">credit_card</i>
-                        <input class="input-field" type="text" size="20" data-culqi="card[number]" id="card[number]">
-                        <label for="card[number]">Número de tarjeta</label>
-                    </div>
-                    <div class="input-field col s12 m8">
-                        <i class="material-icons prefix">https</i>
-                        <input  class="input-field" type="text" size="3" data-culqi="card[cvv]" id="card[cvv]" data-length="3" maxlength="3">
-                        <label for="card[cvc]">CVV</label>
-                    </div>
-                    <div class="input-field">
-                        <div class=" input-field col s5 m5">
-                            <i class="material-icons prefix">today</i>
-                            <input type="text" size="2" data-culqi="card[exp_month]" id="card[exp_month]" data-length="2" maxlength="2">
-                            <label for="card[exp_month]">MM</label>
-                        </div>
-                        <div class="input-field col s1 m1">
-                            <label for="">/</label>
-                        </div>
-                        <div class="input-field col s4 m4">
-                            <input type="text" size="4" data-culqi="card[exp_year]" id="card[exp_year]" data-length="4" maxlength="4" required>
-                            <label for="card[exp_year]">YYYY</label>
-                        </div>
-                    </div>
-                    <div class="input-field">
-                        <div class=" input-field col s12 m10">
-                            <i class="material-icons prefix">edit_pen</i>
-                            <input type="text" id="descripcion">
-                            <label for="descripcion">Descripción del pago</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s5 m5 right">
-                        <button type="button" id="btn-pagar" class="btn-flat">Pagar</button>
-                    </div>
-                </form>
-                <script>
-                    function culqi() {
-                        if(Culqi.token) { // ¡Token creado exitosamente!
-                            // Get the token ID:
-                            var token = Culqi.token.id;
-                            var monto = $('#monto').val();
-                            var venta = $('#descripcion').val();
-                            //var email = $('#card[email]').val();
-                            $.ajax({
-                                method: 'POST',
-                                url: 'web-pay.php',
-                                data: {
-                                    token: token,
-                                    monto: monto,
-                                    descripcion_venta: venta
-
-                                },
-                                dataType: 'JSON',
-                                success: function (data) {
-                                    console.log(data);
-                                },
-                                error: function (error_data) {
-                                    console.log(error_data);
-                                }
-                            });
-
-                            $.ajax({
-                                method: 'POST',
-                                url: 'web-pay.php',
-                                data: {
-                                    token: token,
-                                    monto: monto,
-                                    descripcion_venta: venta
-
-                                },
-                                dataType: 'JSON',
-                                success: function (data) {
-                                    console.log(data);
-                                    if(data.capture == true){
-                                        alert("Todo salio bien");
-                                    }
-                                },
-                                error: function (error_data) {
-                                    console.log(error_data);
-                                }
-                            });
-
-                        }else{ // ¡Hubo algún problema!
-                            // Mostramos JSON de objeto error en consola
-                            console.log(Culqi.error);
-                            alert(Culqi.error.mensaje);
-                        }
-                    };
-
-                    $(document).ready(function () {
-                        /*$('#culqi-card-form').on('submit', function (e) {
-                            e.preventDefault();
-                            Culqi.createToken();
-                        });*/
-                        $('#culqi-card-form').on('submit', function () {
-                            Culqi.createToken();
-
-                        });
-                    });
-
-                </script>
-            </div>
-            <div class="col s12 m3"></div>
-        </div>
-    </div>
-</div>-->
-
 <div class="row">
     <div class="col s12 m12 center-align" id="contenido">
         <div class="col s12 m12">
-            <h4 class="center">Realizar Pago</h4>
+            <h2 class="header center orange-text">Realizar Pago</h2>
             <div class="row">
                 <div class="col s12 m3"></div>
                 <div class="col s12 m6">
@@ -412,13 +272,13 @@ if($dataBussines){
                                 <label for="monto">Monto en dólares</label>
                             </div>
                             <div class="col s12 m4 teal" style="padding-top: 10px; padding-bottom: 10px" id="tip-mon">
-                                <span class="white-text">El monto se ingresa sin punto. Ejemplo 50090 = 500.90</span>
+                                <span class="white-text">El monto. Ejemplo 500.90</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12 m8">
                                 <i class="material-icons prefix">mail</i>
-                                <input class="input-field" id="card[email]" name="correo">
+                                <input class="input-field" id="card[email]" name="correo" type="text">
                                 <label for="card[email]">Correo Electrónico</label>
                             </div>
                             <div class="col s12 m4 teal" style="padding-top: 10px; padding-bottom: 10px" id="tip-cor">
@@ -428,10 +288,10 @@ if($dataBussines){
                         <div class="row">
                             <div class="input-field col s12 m8">
                                 <div class="row" id="tarjetas">
-                                    <a type="button" id="card-visa" class="btn-flat col s3 m3"><img src="img/marcas/visa.png" width="80%"></a>
-                                    <a type="button" id="card-master" class="btn-flat col s3 m3"><img src="img/marcas/mastercard.png" width="80%"></a>
-                                    <a type="button" id="card-american" class="btn-flat col s3 m3"><img src="img/marcas/amercan.png" width="80%"></a>
-                                    <a type="button" id="card-diners" class="btn-flat col s3 m3"><img src="img/marcas/diners-club.png" width="80%"></a>
+                                    <a type="button" id="card-visa" class="btn-flat col s3 m3"><img src="img/visa.png" width="80%"></a>
+                                    <a type="button" id="card-master" class="btn-flat col s3 m3"><img src="img/mastercard.png" width="80%"></a>
+                                    <a type="button" id="card-american" class="btn-flat col s3 m3"><img src="img/amercan.png" width="80%"></a>
+                                    <a type="button" id="card-diners" class="btn-flat col s3 m3"><img src="img/diners-club.png" width="80%"></a>
                                 </div>
                             </div>
                             <div class="col s12 m4 teal" style="padding-top: 10px; padding-bottom: 10px" id="tip-tar">
@@ -462,14 +322,14 @@ if($dataBussines){
                             <div class="input-field" id="fecha">
                                 <div class=" input-field col s6 m3">
                                     <i class="material-icons prefix">today</i>
-                                    <input type="text" size="2" data-culqi="card[exp_month]" id="card[exp_month]" maxlength="2">
+                                    <input type="text" size="2" data-culqi="card[exp_month]" id="card[exp_month]" maxlength="2" name="dia">
                                     <label for="card[exp_month]">MM</label>
                                 </div>
                                 <div class="input-field col s1 m1">
                                     <label for="">/</label>
                                 </div>
                                 <div class="input-field col s6 m4">
-                                    <input type="text" data-culqi="card[exp_year]" id="card[exp_year]" maxlength="4">
+                                    <input type="text" data-culqi="card[exp_year]" id="card[exp_year]" maxlength="4" name="year">
                                     <label for="card[exp_year]">YYYY</label>
                                 </div>
                             </div>
@@ -486,15 +346,11 @@ if($dataBussines){
                             </div>
                         </div>
                         <div class="row">
-                            <div class="center col s12 m10">
-                                <div class="g-recaptcha" data-sitekey="6Ld0TkkUAAAAAI0DsL8rg2HEW4tlc4K0Qif3hM2b"></div>
-                            </div>
-
                             <!-- Descripcion del pago -->
                             <div id="pago" class="modal">
                                 <div class="modal-content" id="total"></div>
-                                <div class="modal-footer">
-                                    <button type="button" id="btn-cancelar" data-target="pago" class="btn-flat waves-effect waves-orange modal-close">Cancelar</button>
+                                <div id="btn-opcion" class="modal-footer">
+                                    <button type="button" id="btn-cancelar" data-target="pago" class="btn-flat waves-effect waves-orange modal-close">Cerrar</button>
                                     <button type="submit" id="btn-pagar" class="btn-flat waves-effect waves-orange">Pagar</button>
                                 </div>
                             </div>
@@ -502,7 +358,7 @@ if($dataBussines){
                             <!-- Terminos y condiciones -->
                             <div id="modal1" class="modal modal-fixed-footer">
                                 <div class="modal-content">
-                                    <?php include ("page/terminos.php");?>
+                                    <?php include ("terminos.php");?>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" data-target="modal1" class="btn-flat waves-effect waves-orange modal-close">Cerrar</button>
@@ -517,69 +373,138 @@ if($dataBussines){
                         </div>
                     </form>
                     <script>
+                    
                         function culqi() {
                             if(Culqi.token) { // ¡Token creado exitosamente!
                                 // Get the token ID:
-                                console.log("Token creado... Listo para enviar");
                                 var token = Culqi.token.id;
                                 var monto = $('#monto').val() * 100;
-                                var venta = $('#descripcion').val();
+                                var cotizacion = $('#cotizacion').val();
                                 var correo = $('input[name="correo"]').val();
-                                console.log("datos obtenidos... creando ajax...");
+                        
+                                var resp_exito = null;
+                                var resp_error = null;
+                                var cod_ref = null;
+                                var email = null;
+                                
                                 $.ajax({
-                                    url: 'controller/pay-web.php',
+                                    url: 'pay-web.php',
                                     method: 'POST',
                                     data: {
                                         token: token,
                                         monto: monto,
-                                        descripcion_venta: venta,
+                                        cotizacion: cotizacion,
                                         correo: correo
                                     },
                                     type: 'JSON',
                                     beforeSend: function () {
-                                        console.log("Todo listo.... enciando datos....")
+                                        //console.log("Todo listo.... enciando datos....");
+                                        $('#total').html("<p class='center-align'><i class='material-icons medium orange-text'>file_upload</i></p><p class='center-align'>Enviando información...</p>");
                                     },
                                     success: function (data) {
-                                        console.log(data);
+                                        
+                                        var datos = jQuery.parseJSON(data);
+                                        
+                                        if(datos.object == "charge"){
+                                            resp_exito = datos.outcome.user_message;
+                                            cod_ref = datos.reference_code;
+                                            email = datos.email;
+                                            
+                                            $('#btn-opcion').html("<button type='button' onclick='javascript:window.location.reload();' class='btn-flat waves-effect waves-green'>Aceptar</button>");
+                                            
+                                            send(resp_exito, cod_ref, email, monto);
+                                            console.log("datos enviados para correo");
+                                        }else{
+                                            var error = jQuery.parseJSON(datos);
+                                            if(error.object == "error"){
+                                                $('#total').html("<p class='center-align'><i class='material-icons medium orange-text'>warning</i></p><p class='center-align'>"+error.user_message+"<p>");
+                                            }else{
+                                                console.log(error);
+                                            }
+                                            
+                                        }
                                     },
                                     error: function (error_data) {
-                                        console.log(error_data);
+                                        $('#total').html("<p class='center-align'><i class='material-icons medium orange-text'>warning</i></p><p class='center-align'>"+error_data+"<p>");
+                                        //console.log(error_data);
                                     }
                                 });
 
                             }else{ // ¡Hubo algún problema!
                                 // Mostramos JSON de objeto error en consola
-                                console.log(Culqi.error);
-                                alert(Culqi.error.mensaje);
+                                //console.log(Culqi.error);
+                                $('#total').html("<p class='center-align'><i class='material-icons medium orange-text'>warning</i></p><p class='center-align'>"+Culqi.error.user_message+"<p>");
+                                
                             }
                         };
-
-                        /*function email() {
-                            var monto = $('#monto').val();
-                            var venta = $('#descripcion').val();
-                            var email = $('input[name="correo"]').val();
+                        
+                        function send(resp_exito, cod_ref, email, monto){
+                            var money = monto / 100;
                             $.ajax({
-                                url: 'controller/send-mail.php',
-                                method: 'POST',
-                                data: {
-                                    monto: monto,
-                                    descripcion_venta: venta
-                                    correo: correo
-                                },
-                                type: 'JSON',
-                                success: function (data) {
-                                    console.log(data);
-                                },
-                                error: function (error_data) {
-                                    console.log(error_data);
-                                }
-                            });
-                        }*/
-
+                                   url: 'send-mail.php',
+                                   method: 'POST',
+                                   data:{
+                                       resp_exito: resp_exito,
+                                       cod_ref: cod_ref,
+                                       email: email,
+                                       monto: money
+                                   },
+                                   beforeSend: function(){
+                                       //console.log("Enviando datos...");
+                                   },
+                                   success: function (data){
+                                        //console.log(data);
+                                        $('#total').html(data);
+                                        
+                                     
+                                   },
+                                   error: function(error_data){
+                                       $('#total').html(error_data);
+                                       //console.log(error_data);
+                                   }
+                                });
+                        }
+                        
                         $(document).ready(function () {
                             $('#culqi-card-form').submit(function (e) {
-                                Culqi.createToken();
-                                e.preventDefault();
+                                if($('#cotizacion').val() == ""){
+                                    var $toastContent = $('<span>Debe digitar Nro. Cotización</span>');
+                                    Materialize.toast($toastContent, 5000);
+                                    return false;
+                                }else{
+                                    if($('#monto').val() == ""){
+                                        var $toastContent = $('<span>Debe digitar el monto a pagar</span>');
+                                        Materialize.toast($toastContent, 5000);
+                                        return false;
+                                    }else{
+                                        if($('input[name="correo"]').val() == ""){
+                                            var $toastContent = $('<span>Debe digitar su correo</span>');
+                                            Materialize.toast($toastContent, 5000);
+                                            return false;
+                                        }else{
+                                            if($('input[name="tarjeta"]').val() == ""){
+                                                var $toastContent = $('<span>Debe digitar el número de su tarjeta</span>');
+                                                Materialize.toast($toastContent, 5000);
+                                                return false;
+                                            }else{
+                                                if($('input[name="cvv"]').val() == ""){
+                                                    var $toastContent = $('<span>Debe digitar su CVV de su tarjeta</span>');
+                                                    Materialize.toast($toastContent, 5000);
+                                                    return false;
+                                                }else{
+                                                    if($('input[name="dia"]').val() == "" || $('input[name="year"]').val() == ""){
+                                                        var $toastContent = $('<span>Debe digitar la fecha de su tarjeta</span>');
+                                                        Materialize.toast($toastContent, 5000);
+                                                        return false;
+                                                    }if($('input[name="dia"]').val() != "" && $('input[name="year"]').val() != ""){
+                                                        Culqi.createToken();
+                                                        e.preventDefault();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             });
                         });
 

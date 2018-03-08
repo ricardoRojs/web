@@ -20,7 +20,7 @@ if (isset($_POST['modulo'])) {
 
                 echo"<div class='card-content'>".
                     "<div>".
-                    "<h4 class='orange-text'>".$print['moduloShort']." - ".$print['moduloFull']."<i class='material-icons right medium orange-text'>desktop_windows</i></h4>".
+                    "<h4>".$print['moduloShort']." - ".$print['moduloFull']."<i class='material-icons right medium'>desktop_windows</i></h4>".
                     "<p><b>Descripción:</b></p>".
                     "<p>".$print['moduloDesc']."</p>".
                     "<br>".
@@ -28,23 +28,28 @@ if (isset($_POST['modulo'])) {
                     "<p>".$print['moduloCat']."</p>".
                     "<br>".
                     "<p><b>Modo de lincencia:</b></p>".
-                    "<p>".$print['modoLicencia']."<a href='../contactar/index.php'> más informacion<i class='material-icons'>arrow_drop_up_circle</i></a></p>".
+                    "<p>".$print['modoLicencia']."</p>".
                     "<br>".
                     "<p><b>Integración:</b></p>";
 
                 //$int = str_replace(",", " - ", $print['integracion']);
                 $claves = explode(",", $print['integracion']);
-                for ($x = 1; $x < sizeof($claves)+1; $x++){
-                    echo "<p>".$x."- ".$claves[$x-1]."</p>";
+                for ($x = 0; $x < sizeof($claves); $x++){
+                    if($claves[$x] == "OC"){
+                        echo "<p>".$claves[$x]." - Orion Core</p>";
+                    }if($claves[$x] == "CI"){
+                        echo "<p>".$claves[$x]." - Integración de la consola Información</p>";
+                    }if($claves[$x] == "HI"){
+                        echo "<p>".$claves[$x]." - Integración híbrida</p>";
+                    }if($claves[$x] == "AS"){
+                        echo "<p>".$claves[$x]." - Pila de la aplicación</p>";
+                    }if($claves[$x] == "CCC"){
+                        echo "<p>".$claves[$x]." - Cert. de criterios comunes</p>";
+                    }if($claves[$x] == "ODC"){
+                        echo "<p>".$claves[$x]." - Otro cert DoD</p>";
+                    }
                 }
                 echo "<br>".
-                    "<p class='right leyenda'><b>OC - Orion Core<br>".
-                    "CI - Integración de la consola Información<br>".
-                    "HI - Integración híbrida<br>".
-                    "AS - Pila de la aplicación<br>".
-                    "CCC - Cert. de criterios comunes<br>".
-                    "ODC - Otro cert DoD</b></p>".
-                    "<br><br>".
                     "</div>".
                     "</div>".
                     "<div class='card-content'>".

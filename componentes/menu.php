@@ -5,7 +5,7 @@
 
     }
     nav .nav-background{
-        height: 300px;
+        height: 280px;
         top: 0;
         opacity: .3;
         bottom: 0;
@@ -22,7 +22,7 @@
     }
     #titulo{
         position: absolute;
-        top: 20%;
+        top: 180px;
         right: 1%;
         left: 1%;
     }
@@ -33,12 +33,12 @@
         <div class="nav-background" id="fondo"></div>
     </div>
     <div class="nav-wrapper container" id="conte">
-        <a href="<?= $link->url("inicio")?>" itemprop="url"><img src="<?php echo $link->url("img")."logo-gis2.png"; ?>" alt="Logo" width="25%"/></a>
+        <a href="<?= $link->url("inicio")?>" itemprop="url"><img src="<?php echo $link->url("img")."logo-gis2.png"; ?>" alt="Logo" width="250px"/></a>
 
         <ul id='productos' class='dropdown-content'>
             <li><a class='dropdown-button2 d' href='<?php echo  $link->url("inicio")."productos/index.php?marca=solarwinds"?>' data-activates='solarwinds' data-hover="hover" data-alignment="left">Solarwinds<i class="material-icons right">keyboard_arrow_right</i></a></li>
-            <li><a class='dropdown-button2 d' href='<?php echo  $link->url("inicio")."productos/index.php?marca=iboss"?>' data-activates='iboss' data-hover="hover" data-alignment="left">Iboss<i class="material-icons right">keyboard_arrow_right</i></a></li>
-            <li><a class='dropdown-button2 d' href='#' data-activates='varonis' data-hover="hover" data-alignment="left">Varonis<i class="material-icons right">keyboard_arrow_right</i></a></li>
+            <!--<li><a class='dropdown-button2 d' href='<?php //echo  $link->url("inicio")."productos/index.php?marca=iboss"?>' data-activates='iboss' data-hover="hover" data-alignment="left">Iboss<i class="material-icons right">keyboard_arrow_right</i></a></li>-->
+            <!--<li><a class='dropdown-button2 d' href='#' data-activates='varonis' data-hover="hover" data-alignment="left">Varonis<i class="material-icons right">keyboard_arrow_right</i></a></li>-->
         </ul>
 
         <ul id='ser-servicio' class='dropdown-content'>
@@ -195,7 +195,7 @@
             <li><a class="dropdown-button" href="#" data-activates="productos">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="ser-servicio">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="nue-cliente">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="<?= $link->url("licencia") ?>">Licencias</a></li>
+            <!--<li><a href="<?= $link->url("licencia") ?>">Licencias</a></li>-->
             <li><a href="<?= $link->url("pago") ?>">Pagos</a></li>
             <li><a href="<?= $link->url("contactar")?>">Contactenos</a></li>
         </ul>
@@ -211,9 +211,9 @@
             <!-- fin dela imagen -->
             <ul class="collapsible" data-collapsible="accordion">
                 <li class="divider"></li>
-                <span>Productos</span>
+                <div class="collapsible-header">Productos</div>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Solarwinds</div>
+                    <div class="collapsible-header"><i class="material-icons">remove_from_queue</i>Solarwinds</div>
                     <div class="collapsible-body">
                         <ul>
                             <li><a href="#" class="card-panel orange-text text-darken-2">Administración de Redes</a></li>
@@ -246,7 +246,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
+                <!--Iboss menu-->
+                <!--<li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Iboss</div>
                     <div class="collapsible-body">
                         <ul>
@@ -280,8 +281,9 @@
                             <li><a href="<?php echo $link->url("iboss")."?id=45";?>">Diagramas de Red</a></li>
                         </ul>
                     </div>
-                </li>
-                <li>
+                </li>-->
+                <!--Varonis menu-->
+                <!--<li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Varonis</div>
                     <div class="collapsible-body">
                         <ul>
@@ -299,58 +301,62 @@
                             <li><a href="<?php echo $link->url("varonis")."?id=52";?>">Data Transport Engine</a></li>
                         </ul>
                     </div>
-                </li>
+                </li>-->
                 <li class="divider"></li>
-                <span>Servicios</span>
+                <div class="collapsible-header">Servicios</div>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Soporte Solarwinds</div>
+                    <div class="collapsible-header"><i class="material-icons">settings</i>Soporte</div>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Data</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Ale</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Adat</a></li>
+                            <li><a href="<?= $link->url("soporte-solarwinds")?>" class="">Soporte Solarwinds</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Poliza de Mantenimiento</div>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Mantenimiento</div>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Data</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Ale</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Adat</a></li>
+                            <li><a href="<?= $link->url("poliza-mantenimiento")?>" class="">Poliza Mantenimiento</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="divider"></li>
-                <span>Nuestros Clientes</span>
+                <div class="collapsible-header">Clientes</div>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Iboss</div>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Solarwinds</div>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Data</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Ale</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Adat</a></li>
+                            <li><a href="<?= $link->url("cliente")."cliente-solarwinds/index.php?pais=peru"?>" class="">Perú</a></li>
+                            <li><a href="<?= $link->url("cliente")."cliente-solarwinds/index.php?pais=ecuador"?>" class="">Ecuador</a></li>
+                            <li><a href="<?= $link->url("cliente")."cliente-solarwinds/index.php?pais=bolivia"?>" class="">Bolivia</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Solarwinds</div>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Iboss</div>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Data</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Ale</a></li>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Adat</a></li>
+                            <li><a href="<?= $link->url("cliente")."cliente-iboss/?pais=peru"?>" class="">Perú</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="divider"></li>
-                <span>Contactenos</span>
+                <div class="collapsible-header">Pagos</div>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Nosotros</div>
+                    <div class="collapsible-header"><i class="material-icons">monetization_on</i>Pagos</div>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="#" class=""><i class="material-icons">menu</i>Contactenos</a></li>
+                            <li><a href="<?= $link->url("pago") ?>" class="">Pagos</a></li>
+                        </ul>
+                    </div>
+                </li>    
+                <li class="divider"></li>
+                <div class="collapsible-header">Contactenos</div>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">contact_mail</i>Nosotros</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="<?= $link->url("contactar")?>" class="">Contactenos</a></li>
                         </ul>
                     </div>
                 </li>

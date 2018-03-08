@@ -1316,8 +1316,10 @@ class PHPMailer
             if (!$this->preSend()) {
                 return false;
             }
-
+            
             return $this->postSend();
+            
+            
         } catch (Exception $exc) {
             $this->mailHeader = '';
             $this->setError($exc->getMessage());

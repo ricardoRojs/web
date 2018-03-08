@@ -8,8 +8,8 @@ class Conexion {
 
 		$servidor = "localhost";
 		$base_datos = "gissac_customers";
-		$usuario = "root";
-		$pass = "";
+		$usuario = "gissac_des";
+		$pass = "gissac_des";
 
 		try{
 			$conexion = new PDO("mysql:host=$servidor; dbname=$base_datos;" ,$usuario, $pass); // Instanciamos el PDO

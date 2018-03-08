@@ -71,9 +71,9 @@ if($dataBussines){
             );
             $('input.autocomplete').autocomplete({
                 data: {
-                    "Solarwinds": 'img/solarwinds.png',
-                    "Iboss": 'img/iboss.png',
-                    "Varonis": 'img/varonis.png'
+                    "Solarwinds": null,
+                    "Iboss": null,
+                    "Varonis": null
                 },
                 limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
                 onAutocomplete: function(val) {
@@ -312,6 +312,7 @@ if($dataBussines){
                         $("#resp").html("<p class='center-align'><i class='material-icons medium orange-text'>file_upload</i></p><p class='center-align'>Enviando información...</p>");
                     },
                     success: function(data){
+                        console.log(data);
                         $('#resp').html(data);
                     },
                     error: function (data){
@@ -388,7 +389,7 @@ if($dataBussines){
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix orange-text">phone</i>
-                                <input name="celular" id="celular" type="text" class="validate" required>
+                                <input name="celular" id="celular" type="number" class="validate" required>
                                 <label for="celular">Celular (*)</label>
                             </div>
                             <div class="input-field col s12">

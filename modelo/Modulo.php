@@ -150,7 +150,7 @@ class Modulo{
     /**
      * Obtenemos información de los clientes
      */
-    public function getCliente($pais,$marca){
+    public function getCliente($pais, $marca){
         $modulo = null;
         $modelo = new Conexion();
         $conexion = $modelo->getConexion();
@@ -177,7 +177,7 @@ class Modulo{
         $conexion = $modelo->getConexion();
 
         $sql = "INSERT INTO  gis_clientes_consultas (id, producto, motivo, empresa, nombre, apellido, correo, celular, pais, ciudad, mensaje, fecha)
-                VALUES('', :producto, :motivo, :empresa, :nombre, :apellido, :correo, :celular, :pais, :ciudad, :mensaje, NOW())";
+                VALUES(0, :producto, :motivo, :empresa, :nombre, :apellido, :correo, :celular, :pais, :ciudad, :mensaje, NOW())";
         $statement = $conexion->prepare($sql);
         $statement->bindParam(':producto', $datos['producto']);
         $statement->bindParam(':motivo',$datos['motivo']);

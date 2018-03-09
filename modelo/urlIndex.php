@@ -7,7 +7,8 @@ class urlIndex{
         //$sub = "web/";
 
         // eliminar $sub al momento de subir ejemplo ("http://192.168.1.10") o ("http://dominio.com").
-        $ip = "https://www.gis-sac.com/";
+        //$ip = "https://www.gis-sac.com/";
+        $ip = "http://192.168.1.10/web/";
 
         $urls = array(
             "solarwinds" => "productos/solarwinds/index.php",

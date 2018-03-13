@@ -18,6 +18,8 @@
     $moduloShort;
     $subTitulo;
 
+    $downSolar = "";
+
     $moduloSo;
     $moduloRam;
     $moduloDiscoDuro;
@@ -78,7 +80,11 @@
     <script>
         $(document).ready(function(){
             $('.parallax').parallax();
-            $('.modal').modal();
+            $('.modal').modal({
+                dismissible: false,
+                startingTop: '100%', // Starting top style attribute
+                endingTop: '30%' // Ending top style attribute
+            });
             $('.button-collapse').sideNav();
             $('.carousel.carousel-slider').carousel({
                 fullWidth: true,
@@ -217,201 +223,188 @@
   <?php include("../../componentes/menu.php");?>
   <!--Toda la modificacion -->
 
-
-        <div class="container center">
-                  <h2 class="header center orange-text text-orange"><?= $moduloFull?></h2>
-                  <div class="row">
-                      <div class="col m12">
-                          <div class="left-align" style="padding: 25px 10px 50px 10px;">
-                              <h5 class="header col s12 light"><?= $subTitulo?></h5>
-                          </div>
-                          <div class="right-align" style="padding: 70px 10px 50px 10px;">
-                              <br>
-                              <p>
-                                  <b>Precio referencial desde: S/. <?= $moduloPrecio?></b>
-                                  <i class="material-icons small">trending_flat</i> <a class="pulse btn green tooltipped" data-position="right" data-delay="50" data-tooltip="Cotizar <?= $moduloShort?>" href="<?=$link->url("contactar")?>"><i class="material-icons medium white-text">assignment</i></a>
-                              </p>
-                              <br>
-
-                          </div>
-                          <a href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="pulse z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="right" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
-                          <a href="<?php echo $downSolar;?>" id="download-button" class="pulse z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="left" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
-                      </div>
-                      <!--<div class="col m6 right-align">
-                          <br>
-                          <br>
-                          <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="500px" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-                      </div>-->
-                  </div>
+  <div class="container center">
+      <h2 class="header center orange-text text-orange"><?= $moduloFull?></h2>
+      <div class="row">
+          <div class="col m12">
+              <div class="left-align" style="padding: 25px 10px 50px 10px;">
+                  <h5 class="header col s12 light"><?= $subTitulo?></h5>
               </div>
+              <div class="right-align" style="padding: 70px 10px 50px 10px;">
+                  <br>
+                  <p>
+                      <b>Precio referencial desde: S/. <?= $moduloPrecio?></b><i class="material-icons small">trending_flat</i> <a class="pulse btn green tooltipped" data-position="right" data-delay="50" data-tooltip="Cotizar <?= $moduloShort?>" href="<?=$link->url("contactar")?>"><i class="material-icons medium white-text">assignment</i></a>
+                  </p>
+                  <br>
 
+              </div>
+              <div class="col right">
+                  <a target="_blank" href="http://oriondemo.solarwinds.com/Orion/Login.aspx?ReturnUrl=%2f" id="download-button" class="pulse z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="right" data-delay="50" data-tooltip="Demostracion en vivo">Demo en vivo</a>
+              </div>
+              <div class="col right">
+                  <a href="#descargar" class="btn-large orange lighten-1 waves-effect waves-light pulse z-depth-3 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>
+                  <!--<a href="<?= $downSolar;?>" id="download-button" class="pulse z-depth-3 btn-large waves-effect waves-light orange lighten-1 tooltipped scale-transition right" data-position="left" data-delay="50" data-tooltip="Totalmente funcional por <?php echo $periodo;?> días">Descargar</a>-->
 
-      <div class="container">
-          <div class="section">
-              <div class="row">
-                  <div class="col s12">
-                      <ul class="tabs grey darken-2">
-                          <li class="tab"><a href="#test1" class="active orange-text">Sobre <?php echo $moduloShort;?></a></li>
-                          <!--<li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>-->
-                          <li class="tab"><a href="#test3" class="orange-text">Requerimiento</a></li>
-                          <!--<li class="tab"><a href="#test4" class="orange-text">Hoja de datos</a></li>-->
-                      </ul>
-                  </div>
-                  <div id="test1" class="col s12">
-                      <!--Pagina individual de cada modulo-->
-                      <div class="row">
-                          <div class="col s12 m12 center">
-                              <h2 class="header center orange-text text-orange"><?php echo $moduloShort;?></h2>
-                              <h5 class="header center orange-text text-orange"><?php echo "(".$moduloCat.")";?></h5>
-                              <img class="right" src="img/solarpartner.png" alt="Marca">
-                          </div>
-                      </div>
-                      <?php
-                      if($key_modulo != null){
-                          $claves = explode("-", $key_modulo);
-                      }else{
-                          $claves = array("llene la tabla .... < key_modulo >");
-                      }
-                      ?>
-                      <?php $path = strtolower($moduloShort."/".$moduloShort.".php");
-                      include ($path);?>
-                      <div class="col s12 m6">
-                          <h5 class="black-text">Principales características:</h5>
-                          <br>
-                          <div class="circles-list">
-                              <ol>
-                                  <?php for($x = 0; $x < sizeof($claves); $x++){
-                                      echo "<li><b>".$claves[$x].".</b></li>";
-                                  }?>
-                              </ol>
-                          </div>
-                      </div>
-                      <div class="col s12 m6">
-                          <br>
-                          <iframe class="vidyard_iframe" src="<?php echo $video;?>" width="100%" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
-                      </div>
-                  </div>
-                  <!--<div id="test2" class="col s12">
-                      <div class="row">
-
-                          <?php
-                          $cTit = array(
-                              "Simplicidad nunca vista",
-                              "Completamente escalable",
-                              "Lo que necesita, cuando lo necesite",
-                              "Diseñado por profesionales de TI, para profesionales de TI");
-                          $cCon = array(
-                              "Monitor de red potente e intuitivo, para que pueda empezar a solucionar los problemas sin demoras",
-                              "El monitoreo de red listo para usar se adapta para gestionar el crecimiento de su organización hoy y en el futuro",
-                              "Diseñe NPM según sus necesidades con compatibilidad con varios proveedores, paneles personalizables, vistas y cuadros",
-                              "Hemos trabajado como ingenieros de sistemas y redes, por lo que comprendemos sus problemas y sabemos cómo resolverlos");
-                          for($x = 0; $x < 4; $x++){?>
-                              <div class="col s12 m6">
-                                  <div class="card blue-grey darken-1">
-                                      <div class="card-content white-text">
-                                          <span class="card-title"><?php echo $cTit[$x];?></span>
-                                          <p><?php echo $cCon[$x];?></p>
-                                      </div>
-                                      <div class="card-action">
-
-                                      </div>
+                  <div id="descargar" class="modal orange lighten-5">
+                      <form method="post">
+                          <div class="modal-content">
+                              <div class="row">
+                                  <h5>Descargar <?= $moduloShort;?> totalmente funcional por <?php echo $periodo;?> días</h5>
+                                  <div class="input-field col s12 m6">
+                                      <i class="material-icons prefix orange-text left">account_circle</i>
+                                      <input class="input-field" name="name" id="name" type="text">
+                                      <label for="name">Nombre y Apellido</label>
+                                  </div>
+                                  <div class="input-field col s12 m6">
+                                      <i class="material-icons prefix orange-text left">phone</i>
+                                      <input class="input-field" name="number" id="number" type="number">
+                                      <label for="name">Numero</label>
+                                  </div>
+                                  <div class="input-field col s12 m6">
+                                      <i class="material-icons prefix orange-text left">email</i>
+                                      <input class="input-field" name="email" id="email" type="email">
+                                      <label for="email">Correo</label>
+                                  </div>
+                                  <div class="input-field col s12 m6">
+                                      <i class="material-icons prefix orange-text left">map</i>
+                                      <input class="input-field" name="country" id="country" type="text">
+                                      <label for="country">País</label>
                                   </div>
                               </div>
-                          <?php }?>
-                      </div>
-                  </div>-->
-                  <div id="test3" class="col s12">
-                      <!-------->
-                      <table class="highlight">
-                          <thead>
-                          <tr>
-                              <th colspan="2"><h5>Requerimiento de hardware y software usados por <?=$moduloShort?></h5></th>
-                          </tr>
-                          </thead>
-                          <tbody>
-                          <?php if($moduloSo != null){?>
-                              <tr>
-                                  <td><img src="img/so1.png" alt="Sistema Operativo"></td>
-                                  <td><?= $moduloSo?></td>
-                              </tr>
-                          <?php }if($moduloRam != null){?>
-                              <tr>
-                                  <td><img src="img/ram1.png" alt=""></td>
-                                  <td><?php echo $moduloRam;?></td>
-                              </tr>
-                          <?php }if($moduloDiscoDuro != null){?>
-                              <tr>
-                                  <td><img src="img/disco1.png" alt=""></td>
-                                  <td><?php echo $moduloDiscoDuro;?></td>
-                              </tr>
-                          <?php }if($moduloProcesador != null){?>
-                              <tr>
-                                  <td><img src="img/procesador1.png" alt=""></td>
-                                  <td><?php echo $moduloProcesador;?></td>
-                              </tr>
-                          <?php }if($moduloBaseDatos != null){?>
-                              <tr>
-                                  <td><img src="img/base1.png" alt=""></td>
-                                  <td><?php echo $moduloBaseDatos;?></td>
-                              </tr>
-                          <?php }if($moduloServerWeb != null){?>
-                              <tr>
-                                  <td><img src="img/web1.png" alt=""></td>
-                                  <td><?php echo $moduloServerWeb;?></td>
-                              </tr>
-                          <?php }if($moduloFrameNet != null){?>
-                              <tr>
-                                  <td><img src="img/net1.png" alt=""></td>
-                                  <td><?php echo $moduloFrameNet;?></td>
-                              </tr>
-                          <?php }?>
-                          </tbody>
-                      </table>
-                      <p><b>Nota: </b><?php echo $nota;?><a href="http://clientes.gis-sac.com">contáctenos</a></p>
-                      <!-------->
+                          </div>
+                          <div class="modal-footer orange lighten-5">
+                              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                          </div>
+                      </form>
                   </div>
-                  <!--<div id="test4" class="col s12">
-                      <div class="col s12 m12 center">
-                          <br>
-                          <iframe src="http://192.168.1.10/web/pdf/web/viewer.html?file=http://192.168.1.10/web/productos/solarwinds/npm/pdf/npm_datasheet.pdf" width="100%" height="600px"></iframe>
-                      </div>
-                  </div>-->
               </div>
           </div>
       </div>
-      
-      <!--<div class="parallax-container">
-          <div class="section no-pad-bot">
-              <div class="container">
-                  <div class="section">
-                      <div class="row">
-                          <div id="back" class="col s5 m1">
-                              <a id="btn-back" onclick="back();return false;" href="#" class="left waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_left</i></a>
-                          </div>
-                          <div class="col s12 m10">
+  </div>
 
-                              <div id="key-fun" class="scroll-img">
-                                  <ul>
-                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=234" target="_blank"><img id="imagen" src="npm/npm-1.png"></a></li>
-                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=485" target="_blank"><img id="imagen" src="npm/npm-2.png"></a></li>
-                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=511" target="_blank"><img id="imagen" src="npm/npm-3.png"></a></li>
-                                      <li><a href="http://www.faceyourmanga.com/mangatar.php?id=725" target="_blank"><img id="imagen" src="npm/npm-4.png"></a></li>
-                                  </ul>
-                              </div>
 
-                          </div>
-                          <div id="next" class="col s5 m1">
-                              <a id="btn-next" onclick="next();return false;" href="#" class="right waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_right</i></a>
-                          </div>
+  <div class="container">
+      <div class="section">
+          <div class="row">
+              <div class="col s12">
+                  <ul class="tabs grey darken-2">
+                      <li class="tab"><a href="#test1" class="active orange-text">Sobre <?= $moduloShort;?></a></li>
+                      <!--<li class="tab"><a href="#test2" class="orange-text">Caracteristicas</a></li>-->
+                      <li class="tab"><a href="#test3" class="orange-text">Requerimiento</a></li>
+                      <!--<li class="tab"><a href="#test4" class="orange-text">Hoja de datos</a></li>-->
+                  </ul>
+              </div>
+              <div id="test1" class="col s12">
+                  <!--Pagina individual de cada modulo-->
+                  <div class="row">
+                      <div class="col s12 m12 center">
+                          <h2 class="header center orange-text text-orange"><?= $moduloShort;?></h2>
+                          <h5 class="header center orange-text text-orange"><?= "(".$moduloCat.")";?></h5>
+                          <img class="right" src="img/solarpartner.png" alt="Marca">
                       </div>
                   </div>
+                  <?php
+                  if($key_modulo != null){
+                      $claves = explode("-", $key_modulo);
+                  }else{
+                      $claves = array("No se a podido obtener la información");
+                  }
+                  ?>
+                  <?php $path = strtolower($moduloShort."/".$moduloShort.".php");
+                  include ($path);?>
+                  <div class="col s12 m6">
+                      <h5 class="black-text">Principales características:</h5>
+                      <br>
+                      <div class="circles-list">
+                          <ol>
+                              <?php for($x = 0; $x < sizeof($claves); $x++){
+                                  echo "<li><b>".$claves[$x].".</b></li>";
+                              }?>
+                          </ol>
+                      </div>
+                  </div>
+                  <div class="col s12 m6">
+                      <br>
+                      <iframe class="vidyard_iframe" src="<?= $video;?>" width="100%" height="300px" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen></iframe>
+                  </div>
+              </div>
+              <!--<div id="test2" class="col s12">
+
+              </div>-->
+              <div id="test3" class="col s12">
+                  <!-------->
+                  <table class="highlight">
+                      <thead>
+                      <tr>
+                          <th colspan="2"><h5>Requerimiento de hardware y software usados por <?=$moduloShort?></h5></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <?php if($moduloSo != null){?>
+                          <tr>
+                              <td><img src="img/so1.png" alt="Sistema Operativo"></td>
+                              <td><?= $moduloSo?></td>
+                          </tr>
+                      <?php }if($moduloRam != null){?>
+                          <tr>
+                              <td><img src="img/ram1.png" alt=""></td>
+                              <td><?php echo $moduloRam;?></td>
+                          </tr>
+                      <?php }if($moduloDiscoDuro != null){?>
+                          <tr>
+                              <td><img src="img/disco1.png" alt=""></td>
+                              <td><?php echo $moduloDiscoDuro;?></td>
+                          </tr>
+                      <?php }if($moduloProcesador != null){?>
+                          <tr>
+                              <td><img src="img/procesador1.png" alt=""></td>
+                              <td><?php echo $moduloProcesador;?></td>
+                          </tr>
+                      <?php }if($moduloBaseDatos != null){?>
+                          <tr>
+                              <td><img src="img/base1.png" alt=""></td>
+                              <td><?php echo $moduloBaseDatos;?></td>
+                          </tr>
+                      <?php }if($moduloServerWeb != null){?>
+                          <tr>
+                              <td><img src="img/web1.png" alt=""></td>
+                              <td><?php echo $moduloServerWeb;?></td>
+                          </tr>
+                      <?php }if($moduloFrameNet != null){?>
+                          <tr>
+                              <td><img src="img/net1.png" alt=""></td>
+                              <td><?php echo $moduloFrameNet;?></td>
+                          </tr>
+                      <?php }?>
+                      </tbody>
+                  </table>
+                  <p><b>Nota: </b><?php echo $nota;?><a href="http://clientes.gis-sac.com">contáctenos</a></p>
+                  <!-------->
+              </div>
+              <!--<div id="test4" class="col s12">
+                  <div class="col s12 m12 center">
+                      <br>
+                      <iframe src="http://192.168.1.10/web/pdf/web/viewer.html?file=http://192.168.1.10/web/productos/solarwinds/npm/pdf/npm_datasheet.pdf" width="100%" height="600px"></iframe>
+                  </div>
+              </div>-->
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="section">
+
+          <div class="row">
+              <div class="col s12 center">
+                  <h4><i class="mdi-content-send brown-text"></i>DATA SHEET</h4>
+                  <a id="download-button" class="btn-large waves-effect waves-light orange lighten-1">ver</a>
               </div>
           </div>
 
-          <div class="parallax"><img src="../../img/dos.jpg" alt="Unsplashed background img 2"></div>
-      </div>-->
-      
-      
+      </div>
+  </div>
+
       <div class="container">
           <div class="section">
 

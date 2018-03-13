@@ -5,14 +5,14 @@
 
     }
     nav .nav-background{
-        height: 280px;
+        height: 120px;
         top: 0;
         opacity: .3;
         bottom: 0;
         -webkit-transform: none;
         transform: none;
         background-repeat: repeat;
-        <?php echo "background-image: url('".$link->url("img")."new.png') !important;"; ?>
+        <?php //echo "background-image: url('".$link->url("img")."new.png') !important;"; ?>
     }
     #conte{
         position: absolute;
@@ -22,9 +22,36 @@
     }
     #titulo{
         position: absolute;
-        top: 180px;
+        top: 100px;
         right: 1%;
         left: 1%;
+
+    }
+
+    /*botón up*/
+    .boton-subir{
+        display: none;
+        /*background: #00974B;*/
+        background: #2196f3;
+        border: thin solid #fff;
+        border-radius: 3px;
+        position: fixed;
+        right: 15px;
+        bottom:2px;
+        z-index: 999999999;
+    }
+    /*evento hover*/
+    .boton-subir:hover{
+        box-shadow:   0px 2px 10px 0px rgba(255, 255, 255, 0.75);
+    }
+    /*estilos para el tag i*/
+    .boton-subir i{
+        color: #fff;
+        font-size: 1.5em;
+        padding: 10px 10px 10px 10px;
+        /*-ms-transform: rotate(-45deg); /* IE 9 */
+        /*-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+        /*transform: rotate(-45deg);*/
     }
 
 </style>
@@ -33,7 +60,7 @@
         <div class="nav-background" id="fondo"></div>
     </div>
     <div class="nav-wrapper container" id="conte">
-        <a href="<?= $link->url("inicio")?>" itemprop="url"><img src="<?php echo $link->url("img")."logo-gis2.png"; ?>" alt="Logo" width="250px"/></a>
+        <a href="<?= $link->url("inicio")?>" itemprop="url"><img src="<?php echo $link->url("img")."logo-gis2.png"; ?>" alt="Logo" width="200px"/></a>
 
         <ul id='productos' class='dropdown-content'>
             <li><a class='dropdown-button2 d' href='<?php echo  $link->url("inicio")."productos/index.php?marca=solarwinds"?>' data-activates='solarwinds' data-hover="hover" data-alignment="left">Solarwinds<i class="material-icons right">keyboard_arrow_right</i></a></li>
@@ -195,9 +222,10 @@
             <li><a class="dropdown-button" href="#" data-activates="productos">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="ser-servicio">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-button" href="#" data-activates="nue-cliente">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
-            <!--<li><a href="<?= $link->url("licencia") ?>">Licencias</a></li>-->
+            <!--<li><a href="<?php //echo$link->url("licencia") ?>">Licencias</a></li>-->
             <li><a href="<?= $link->url("pago") ?>">Pagos</a></li>
             <li><a href="<?= $link->url("contactar")?>">Contactenos</a></li>
+            <li><a href="../noticias/index.php?news=internet-lento">Noticias</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav black-text text-darken-2">
@@ -364,7 +392,7 @@
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-    <div class="center" id="titulo">
-        <h2><?php echo $marcaFull;?></h2>
-    </div>
+    <!--<div class="center" id="titulo">
+        <h2 class="orange-text"><?php echo $marcaFull;?></h2>
+    </div>-->
 </nav>

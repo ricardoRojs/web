@@ -1,18 +1,19 @@
 <style>
     nav {
         /*background-color: #7db557;*/
-        background-color: #2196f3;
+        background-color: #ff9800;
+        /*background-color: #2196f3;*/
 
     }
     nav .nav-background{
         height: 120px;
         top: 0;
-        opacity: .3;
+        opacity: .5;
         bottom: 0;
         -webkit-transform: none;
         transform: none;
         background-repeat: repeat;
-        <?php //echo "background-image: url('".$link->url("img")."new.png') !important;"; ?>
+        <?php echo "background-image: url('".$link->url("img")."fondo.png') !important;"; ?>
     }
     #conte{
         position: absolute;
@@ -225,7 +226,7 @@
             <!--<li><a href="<?php //echo$link->url("licencia") ?>">Licencias</a></li>-->
             <li><a href="<?= $link->url("pago") ?>">Pagos</a></li>
             <li><a href="<?= $link->url("contactar")?>">Contactenos</a></li>
-            <li><a href="../noticias/index.php?news=internet-lento">Noticias</a></li>
+            <li><a href="<?=$link->url("inicio")?>noticias/">Noticias</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav black-text text-darken-2">
@@ -392,7 +393,4 @@
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-    <!--<div class="center" id="titulo">
-        <h2 class="orange-text"><?php echo $marcaFull;?></h2>
-    </div>-->
 </nav>

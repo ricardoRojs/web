@@ -3,19 +3,24 @@ require_once ('../modelo/Conexion.php');
 require_once ('../modelo/Modulo.php');
 require_once ('../modelo/urlIndex.php');
 
+$tz_object = new DateTimeZone('America/Lima');
+
+$datetime = new DateTime();
+$datetime->setTimezone($tz_object);
+
 $modulo = new Modulo();
 $link = new urlIndex();
 
 $marcaFull = "Noticias";
 
-$claves = explode("-", $_GET['news']);
-$letra = "";
-for ($a = 0; $a < sizeof($claves); $a++){
-    $letra = $letra." ".$claves[$a];
+$day = $datetime->format('Y-m-d');
+$directorio = dirname(__FILE__)."/news-day";
+$gestor_dir = opendir($directorio);
+while (false !== ($nombre_fichero = readdir($gestor_dir))) {
+    $ficheros[] = $nombre_fichero;
 }
-$word = $letra;
+rsort($ficheros);
 
-//echo "Noticia: ".ucwords($word);
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +33,7 @@ $word = $letra;
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
 
-    <title><?= ucwords($word)?></title>
+    <title><?=$marcaFull?></title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -146,18 +151,18 @@ $word = $letra;
     <div class="section">
         <div class="row">
             <div class="col s12 m8">
-                <div class="col s12 center" style="background: #2E7D32; height: 590px">
+                <?php include ("news-day/".$ficheros[0]."/".$ficheros[0].".php");?>
+            </div>
+            <?php
+            for ($a = 1; $a < sizeof($ficheros)-2; $a++){?>
+                <div class="col s12 m4" style="margin-bottom: 10px">
+                    <?php include ("news-day/".$ficheros[$a]."/".$ficheros[$a].".php");?>
                 </div>
-            </div>
-            <div class="col s12 m4">
-                <button type="button" class="btn-flat" id="btnfade">Accion</button>
-                <?php for ($a = 1; $a < 5; $a++){?>
-                    <div class="col s12 center" id="fadeDer" style="background: black; height: 140px; margin-bottom: 10px;"><p class="white-text">Noticia <?= $a?></p></div>
-                <?php }?>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </div>
+
 
 <!--Pie de la pagina -->
 <?php include("../componentes/pie.php");?>

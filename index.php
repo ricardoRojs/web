@@ -129,37 +129,30 @@
   <?php include("componentes/menu.php");?>
   <!--Toda la modificacion -->
 
-  <div class="parallax-container">
-      <div class="section no-pad-bot">
-          <div class="container center">
-              <div class="slideshow-container">
-                  <!--<iframe allowfullscreen="" frameborder="0" height="390" src="banner/demo/index.html" width="570"></iframe>-->
-                  <div class="section">
-                      <br>
-                      <div class="row">
-                          <div id="back" class="col s5 m1">
-                              <a id="btn-back" onclick="back();return false;" href="#" class="left waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_left</i></a>
-                          </div>
-                          <div class="col s12 m10">
+  <div class="container center">
+      <div class="section">
+          <div class="row">
+              <br>
+              <div id="back" class="col s5 m1">
+                  <a id="btn-back" onclick="back();return false;" href="#" class="left waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_left</i></a>
+              </div>
+              <div class="col s12 m10">
 
-                              <div id="key-fun" class="scroll-img">
-                                  <ul>
-                                      <li><a href="#" ><img id="imagen" src="img/marcas/solarwinds-4.png"></a></li>
-                                      <li><a href="#" ><img id="imagen" src="img/marcas/iboss-3.png"></a></li>
-                                      <li><a href="#" ><img id="imagen" src="img/marcas/Varonis-3.png"></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                          <div id="next" class="col s5 m1">
-                              <a id="btn-next" onclick="next();return false;" href="#" class="right waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_right</i></a>
-                          </div>
-                      </div>
+                  <div id="key-fun" class="scroll-img">
+                      <ul>
+                          <li><a href="#" ><img id="imagen" src="img/marcas/solarwinds-4.png"></a></li>
+                          <li><a href="#" ><img id="imagen" src="img/marcas/iboss-3.png"></a></li>
+                          <li><a href="#" ><img id="imagen" src="img/marcas/Varonis-3.png"></a></li>
+                      </ul>
                   </div>
               </div>
+              <div id="next" class="col s5 m1">
+                  <a id="btn-next" onclick="next();return false;" href="#" class="right waves-effect waves-orange" style="margin-top: 200px"><i class="material-icons medium orange-text">keyboard_arrow_right</i></a>
+              </div>
           </div>
-          <div class="parallax"><img src="img/slider.jpg" alt="Unsplashed background img 1"></div>
       </div>
   </div>
+
    
    <div class="container">
     <div class="section">
@@ -199,6 +192,6 @@
     </div>
   </div>
         
-    <?php include("componentes/pie.php");?>
-   </body>
+  <?php include("componentes/pie.php");?>
+  </body>
 </html>

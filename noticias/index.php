@@ -146,23 +146,32 @@ rsort($ficheros);
 <!--Menu de la pagina -->
 <?php include("../componentes/menu.php");?>
 
+<?php if(isset($_GET['news'])){ ?>
+<div class="container">
+    <div class="section">
+        <div class="row">
+        <?php include ("news-day/".$_GET['news']."/".$_GET['news'].".php");?>
+        </div>
+    </div>
+</div>
+<?php }else{?>
 <!--Cuerpo de la pagina -->
 <div class="container">
     <div class="section">
         <div class="row">
-            <div class="col s12 m8">
+            <div class="col s12 m8" >
                 <?php include ("news-day/".$ficheros[0]."/".$ficheros[0].".php");?>
             </div>
             <?php
             for ($a = 1; $a < sizeof($ficheros)-2; $a++){?>
-                <div class="col s12 m4" style="margin-bottom: 10px">
+                <div class="col s12 m4 " style="margin-bottom: 10px">
                     <?php include ("news-day/".$ficheros[$a]."/".$ficheros[$a].".php");?>
                 </div>
             <?php } ?>
         </div>
     </div>
 </div>
-
+<?php }?>
 
 <!--Pie de la pagina -->
 <?php include("../componentes/pie.php");?>
